@@ -1,0 +1,41 @@
+[data-dropzone] {
+    display: block;
+    padding: 20px 50px;
+    border-style: dashed;
+    border-color: #bcc1c5;
+    border-width: 1px;
+    max-width: 31.25rem;
+
+    .dz-preview {
+        display: flex;
+        align-items: center;
+        height: 4rem;
+        margin-top: 1rem;
+
+        .dz-image {
+            display: table;
+            margin-right: 1rem;
+            width: 4rem;
+
+            img {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+
+        .dz-details {
+            display: table;
+            width: 13.25rem;
+            margin-right: 1rem;
+        }
+
+        .dz-size, .dz-error-mark, .dz-success-mark {
+            display: none;
+        }
+    }
+
+
+    .dz-preview:first-child {
+        margin-top: 2rem;
+    }
+}

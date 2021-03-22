@@ -1,0 +1,80 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class SubjectSuggestion {
+    int id
+    int subject_id
+    string title
+    text description
+    text importance
+    text assist
+    string firstname
+    string lastname
+    string email
+    string phone_number
+    bool agree_to_terms
+    bool email_confirmed
+    files()
+}
+
+class File {
+    int id
+    string filename
+    string original_filename
+    string fqcn
+    int fqcn_id
+}
+
+SubjectSuggestion --> File
+
+class Subject {
+    int id
+    string title
+    string short_description
+    string description
+    string image
+    string type
+    enum state draft|new|rejected|selected
+    files()
+    round()
+    donations()
+    suggestions()
+    subjects()
+}
+
+class votingRound {
+    int id
+    subjects()
+}
+
+Subject --> SubjectSuggestion
+Subject --> File
+Subject --> Subject
+
+class Vote {
+    int id
+    int subject_id
+    string email
+    bool agree_to_terms
+}
+
+Subject --> Vote
+
+class Assistant {
+    int id
+    string email
+    bool know_what_to_do
+    text what_to_do
+    bool agree_to_terms
+    bool email_confirmed
+}
+
+class Donation {
+    int id
+    text message
+    bool shared_over_multiple_subjects
+}
+
+Subject --> Donation
+
+@enduml

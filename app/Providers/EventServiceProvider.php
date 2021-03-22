@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Events\Assistant;
+use App\Events\SubjectSuggestion;
+use App\Events\Subject;
+use App\Listeners\AutoPopulateSubject;
+use App\Listeners\SendMail;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -17,6 +22,18 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        SubjectSuggestion\Created::class => [
+            SendMail\SubjectSuggestionCreatedListener::class,
+        ],
+        SubjectSuggestion\Updated::class => [
+            AutoPopulateSubject\SubjectSuggestionUpdatedListener::class
+        ],
+        Subject\CreatedWithSuggestion::class => [
+            SendMail\SubjectWithSuggestionCreatedListener::class,
+        ],
+        Assistant\Created::class => [
+            SendMail\AssistantCreatedListener::class,
         ],
     ];
 

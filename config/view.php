@@ -33,4 +33,8 @@ return [
         realpath(storage_path('framework/views'))
     ),
 
+    'theme' => [
+        'dark' => env('APP_DARK_MODE'),
+    ],
+
 ];

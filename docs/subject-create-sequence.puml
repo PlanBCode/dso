@@ -1,0 +1,53 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autonumber
+
+actor admin
+actor user
+entity SuggestedSubject
+entity Subject
+control event as event
+
+==Initialization==
+user -> SuggestedSubject: create SuggestedSubject
+activate user
+    activate SuggestedSubject
+        SuggestedSubject -> event: trigger event SuggestedSubject created
+activate event
+        user <-- SuggestedSubject: thank you, confirm mail
+    deactivate SuggestedSubject
+deactivate user
+    user o<- event: send email confirmation mail
+deactivate event
+
+==Authentication==
+user -> SuggestedSubject: confirm email
+activate user
+    activate SuggestedSubject
+        SuggestedSubject -> event: trigger event SuggestedSubject updated
+activate event
+        user <-- SuggestedSubject: thank you, confirmed
+    deactivate SuggestedSubject
+deactivate user
+    hnote over event : if confirmed
+    Subject <- event: create Subject
+deactivate event
+
+activate Subject
+    Subject -> event: trigger event Subject created
+deactivate Subject
+
+activate event
+    admin o<- event: send Subject accept mail
+deactivate event
+
+==Acceptance==
+admin -> Subject: accept / reject Subject
+activate Subject
+    activate admin
+        user o<- Subject: send accepted / rejected mail
+        admin <-- Subject: Subject updated
+    deactivate admin
+deactivate Subject
+
+@enduml
