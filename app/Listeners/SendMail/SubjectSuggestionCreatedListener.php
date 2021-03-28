@@ -19,6 +19,7 @@ class SubjectSuggestionCreatedListener
 
         $viewData = ['url' => $confirmationUrl];
         $content = (string)view('mail.subject_suggestions.confirmation', $viewData);
+        $content = nl2br($content);
 
         $fromName = config('mail.from.name');
         $fromEmail = config('mail.from.address');

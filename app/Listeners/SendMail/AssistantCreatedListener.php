@@ -19,6 +19,7 @@ class AssistantCreatedListener
 
         $viewData = ['url' => $confirmationUrl];
         $content = (string)view('mail.assistants.confirmation', $viewData);
+        $content = nl2br($content);
 
         $fromName = config('mail.from.name');
         $fromEmail = config('mail.from.address');

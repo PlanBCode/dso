@@ -45,6 +45,7 @@ class SubjectSuggestionsController extends Controller
             '[link-to-new-subject]' => '<a href="' . $createUrl . '">' . $createUrl . '</a>',
         ];
         $content = str_replace(array_keys($replaceMtx), array_values($replaceMtx), $content);
+        $content = nl2br($content);
 
         $fromName = config('mail.from.name');
         $fromEmail = config('mail.from.address');

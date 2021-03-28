@@ -25,6 +25,7 @@ class SubjectWithSuggestionCreatedListener
 
         $viewData = ['url' => $subjectUrl];
         $content = (string)view('mail.subjects.created-with-suggestion', $viewData);
+        $content = nl2br($content);
 
         $fromName = config('mail.from.name');
         $fromEmail = config('mail.from.address');
