@@ -11,6 +11,7 @@
                 </div>
                 <div class="modal-body bg-white">
                     <p>Je bericht is verstuurd! Dankjewel dat je mee wilt helpen.</p>
+                    <p>Vergeet niet om je e-mailadres te bevestigen in de mail die je van ons ontvangen hebt. Alleen dan krijgen we je bericht binnen. </p>
 
                     <div class="pt-4 sm:justify-start">
                         <a href="#" data-dismiss="modal">Sluit</a>

@@ -49,7 +49,7 @@
                                     <textarea name="message" id="message" class="form-control un-ltd-max-width" rows="16">Je ontvangt dit bericht omdat je een onderwerp ingestuurd hebt bij de Stadsbron Onderzoekt.
 Helaas kunnen we je onderwerp (nog) niet publiceren omdat het niet past bij de Stadsbron. Soms is het met een paar aanpassingen alsnog geschikt. Hieronder staan een aantal tips op een rij.
 
-Op de website hebben we een aantal vragen opgeschreven waarmee je kunt controleren of je onderwerp geschikt is voor de Stadsbron. Op dit moment voldoet je onderwerp niet aan de volgende vraag:
+Op de website hebben we een aantal vragen opgeschreven waarmee je kunt controleren of je onderwerp geschikt is voor de Stadsbron. Op dit moment voldoet je onderwerp nog niet aan alle criteria:
 
 Wat je zou kunnen doen om het onderwerp passender bij de Stadsbron te maken: ...
 

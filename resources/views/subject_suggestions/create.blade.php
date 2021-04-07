@@ -3,6 +3,8 @@
 @section('content')
 <div class="pt-8 sm:justify-start">
     <h3>Stuur je onderwerp in</h3>
+    <p>Heb je een idee? Een brandende vraag over Amersfoort die je altijd al hebt willen stellen, een onderwerp uit de regio dat nooit eens in de krant opgepikt wordt, of een gerucht dat je altijd nog eens wilde uitzoeken? Stuur dan hier je idee in.</p>
+    <p>Als meer Amersfoorters je onderwerp net zo belangrijk vinden, gaan de journalisten van de Stadsbron jouw onderzoeksvraag tot de bodem uitzoeken.</p>
     <p>We zijn benieuwd welk idee je voor ons in petto hebt. Hieronder staan een aantal hulpvragen om de kans zo groot mogelijk te maken dat jouw onderwerp onderzocht gaat worden. Zo kun je controleren of je onderwerp past bij de Stadsbron.</p>
     <ul class="bullet-list">
         <li><span class="font-semibold text-lg">Heeft het onderwerp te maken met (de regio) Amersfoort?</span><br>

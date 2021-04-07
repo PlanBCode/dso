@@ -13,16 +13,16 @@
                     <div id="createSuggestionForm">
                         <ul class="nav nav-tabs" role="tablist" data-tabbed-form>
                             <li class="nav-item mr-1" role="presentation">
-                                <a class="nav-link active" data-toggle="tab" href="#subject" role="tab" aria-controls="subject" aria-selected="true">onderwerp</a>
+                                <a class="nav-link active" data-toggle="tab" href="#subject" role="tab" aria-controls="subject" aria-selected="true">Onderwerp</a>
                             </li>
                             <li class="nav-item mx-1" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#importance" role="tab" aria-controls="importance" aria-selected="false" disabled>belang</a>
+                                <a class="nav-link" data-toggle="tab" href="#importance" role="tab" aria-controls="importance" aria-selected="false" disabled>Belang</a>
                             </li>
                             <li class="nav-item mx-1" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#do" role="tab" aria-controls="do" aria-selected="false" disabled>meedoen</a>
+                                <a class="nav-link" data-toggle="tab" href="#do" role="tab" aria-controls="do" aria-selected="false" disabled>Meedoen</a>
                             </li>
                             <li class="nav-item mx-1" role="presentation">
-                                <a class="nav-link" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false" disabled>versturen</a>
+                                <a class="nav-link" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false" disabled>Versturen</a>
                             </li>
                         </ul>
                         <form action="{{ route('subject-suggestion-store') }}" method="POST" class="needs-validation" novalidate>
@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="pt-8 sm:justify-start">
                                         <label for="description">
-                                            Wat zou je willen dat De Stadsbron gaat onderzoeken? (max 200 woorden) *<br>
+                                            Wat zou je willen dat de Stadsbron gaat onderzoeken? (max 200 woorden) *<br>
                                             <textarea type="text" name="description" id="description" rows="8" class="form-control" data-to-summary="description" required></textarea>
                                             <div class="invalid-feedback">
                                                 Dit veld is verplicht.
@@ -80,7 +80,7 @@
                                     <div class="pt-8 sm:justify-start">
                                         Heb je tijd en zin om zelf mee te helpen met het onderzoek?<br>
                                         <label for="skills">
-                                            Zo ja, welke vaardigheden heeft u of zou u willen opdoen?<br>
+                                            Zo ja, welke vaardigheden heb je of zou je willen opdoen?<br>
                                             <textarea type="text" name="skills" id="skills" rows="8" class="form-control" data-to-summary="skills"></textarea>
                                         </label>
                                     </div>
@@ -119,28 +119,28 @@
                                             <div class="w-100">
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
                                                     <label for="firstname" class="pr-2">
-                                                        voornaam *<br>
+                                                        Voornaam *<br>
                                                         <input type="text" name="firstname" id="firstname" class="form-control" required>
                                                         <div class="invalid-feedback">
                                                             Dit veld is verplicht.
                                                         </div>
                                                     </label>
                                                     <label for="lastname" class="pl-2">
-                                                        achternaam *<br>
+                                                        Achternaam *<br>
                                                         <input type="text" name="lastname" id="lastname" class="form-control" required>
                                                         <div class="invalid-feedback">
                                                             Dit veld is verplicht.
                                                         </div>
                                                     </label>
                                                     <label for="phone" class="pr-2">
-                                                        telefoonnummer *<br>
+                                                        Telefoonnummer *<br>
                                                         <input type="text" name="phone" id="phone" class="form-control" required>
                                                         <div class="invalid-feedback">
                                                             Dit veld is verplicht.
                                                         </div>
                                                     </label>
                                                     <label for="email" class="pl-2">
-                                                        e-mailadres *<br>
+                                                        E-mailadres *<br>
                                                         <input type="email" name="email" id="email" class="form-control" required>
                                                         <div class="invalid-feedback">
                                                             Vul een geldig e-mailadres in.
