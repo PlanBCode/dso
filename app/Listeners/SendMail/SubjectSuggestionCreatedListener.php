@@ -25,7 +25,7 @@ class SubjectSuggestionCreatedListener
         $fromEmail = config('mail.from.address');
         $replyTo = config('mail.from.address');
 
-        $mailSubject = 'Bevestig e-mailadres voor nieuw onderzoeksvoorstel - De Stadsbron onderzoekt';
+        $mailSubject = 'Bevestig e-mailadres voor nieuw onderzoeksvoorstel - ' . config('app.name');
 
         $mail = new MailingSend($content, $mailSubject, $fromName, $fromEmail, $replyTo);
 

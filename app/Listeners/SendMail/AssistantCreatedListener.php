@@ -25,7 +25,7 @@ class AssistantCreatedListener
         $fromEmail = config('mail.from.address');
         $replyTo = config('mail.from.address');
 
-        $mailSubject = 'Bevestig e-mailadres - De Stadsbron onderzoekt';
+        $mailSubject = 'Bevestig e-mailadres - ' . config('app.name');
 
         $mail = new MailingSend($content, $mailSubject, $fromName, $fromEmail, $replyTo);
 

@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\AssistantsController as AssistantsAdminController;
+use App\Http\Controllers\Admin\HomeController as HomeAdminController;
 use App\Http\Controllers\Admin\SubjectsController as SubjectsAdminController;
-use App\Http\Controllers\Admin\SubjectSuggestionsController as SubjectSuggestionsAdminController;
 use App\Http\Controllers\AssistantsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FilesController;
@@ -48,6 +49,10 @@ Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], fu
     Route::group(['prefix' => 'subject-suggestions'], function () {
         Route::get('/create', [SubjectSuggestionsController::class, 'create'])
             ->name('subject-suggestion-create');
+
+        Route::get('/{subjectSuggestion}/recreate', [SubjectSuggestionsController::class, 'recreate'])
+            ->name('subject-suggestion-recreate');
+
         Route::post('/create', [SubjectSuggestionsController::class, 'store'])
             ->name('subject-suggestion-store');
         Route::get('/{subjectSuggestion}/confirm-email', [SubjectSuggestionsController::class, 'confirmEmail'])
@@ -62,13 +67,11 @@ Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], fu
     });
 
     Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
-        Route::group(['prefix' => 'subject-suggestions'], function () {
-            Route::post('/{subjectSuggestion}/accept', [SubjectSuggestionsAdminController::class, 'accept'])
-                ->name('admin-subject-suggestion-accept');
-            Route::post('/{subjectSuggestion}/reject', [SubjectSuggestionsAdminController::class, 'reject'])
-                ->name('admin-subject-suggestion-reject');
-        });
+        Route::get('/', [HomeAdminController::class, 'show'])
+            ->name('admin-home');
         Route::group(['prefix' => 'subjects'], function () {
+            Route::get('/', [SubjectsAdminController::class, 'index'])
+                ->name('admin-subject-index');
             Route::get('/{subject}', [SubjectsAdminController::class, 'show'])
                 ->name('admin-subject-show');
             Route::put('/{subject}', [SubjectsAdminController::class, 'update'])
@@ -81,6 +84,16 @@ Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], fu
                 ->name('admin-subject-claim');
             Route::get('/{subject}/claim-release', [SubjectsAdminController::class, 'claimRelease'])
                 ->name('admin-subject-claim-release');
+            Route::post('/{subject}/accept', [SubjectsAdminController::class, 'accept'])
+                ->name('admin-subject-accept');
+            Route::post('/{subject}/reject', [SubjectsAdminController::class, 'reject'])
+                ->name('admin-subject-reject');
+        });
+        Route::group(['prefix' => 'assistants'], function () {
+            Route::get('/', [AssistantsAdminController::class, 'index'])
+                ->name('admin-assistant-index');
+            Route::get('/{assistant}', [AssistantsAdminController::class, 'show'])
+                ->name('admin-assistant-show');
         });
     });
 });

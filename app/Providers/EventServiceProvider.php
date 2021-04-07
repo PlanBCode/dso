@@ -32,6 +32,12 @@ class EventServiceProvider extends ServiceProvider
         Subject\CreatedWithSuggestion::class => [
             SendMail\SubjectWithSuggestionCreatedListener::class,
         ],
+        Subject\AcceptWithMail::class => [
+            SendMail\SubjectAcceptWithMailListener::class,
+        ],
+        Subject\Updated::class => [
+            SendMail\SubjectUpdatedListener::class,
+        ],
         Assistant\Created::class => [
             SendMail\AssistantCreatedListener::class,
         ],

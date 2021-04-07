@@ -11,13 +11,13 @@
                 </div>
                 <div class="modal-body bg-white">
                     <p>De mail naar de indiener:</p>
-                    <form action="{{ route('admin-subject-suggestion-accept', ['subjectSuggestion' => $subject_suggestion]) }}" method="POST" class="needs-validation" novalidate>
+                    <form action="{{ route('admin-subject-accept', ['subject' => $subject]) }}" method="POST" class="needs-validation" novalidate>
                         <div class="border p-6 shadow-sm">
                             @csrf
                             <div class="sm:justify-start">
                                 <label for="subject">
                                     Onderwerp *<br>
-                                    <input type="text" name="subject" id="subject" class="form-control" required value="Jouw onderwerp is goedgekeurd">
+                                    <input type="text" name="subject" id="subject" class="form-control" required value="Je onderwerp is goedgekeurd">
                                     <div class="invalid-feedback">
                                         Dit veld is verplicht.
                                     </div>

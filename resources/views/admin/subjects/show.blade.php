@@ -2,6 +2,8 @@
 
 @section('content')
 
+    <p></p>
+
 <p class="pt-8">status: {!! $subject->state !!}</p>
 
 @if($subject->image)
@@ -50,5 +52,9 @@
     @endif
 
 @endif
+
+    <div class="pt-8 sm:justify-start">
+        <a href="{{ route('admin-subject-index') }}" class="btn btn-primary">Terug naar het overzicht</a>
+    </div>
 
 @endsection

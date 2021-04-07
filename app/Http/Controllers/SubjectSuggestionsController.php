@@ -17,6 +17,14 @@ class SubjectSuggestionsController extends Controller
         return view('subject_suggestions.create');
     }
 
+    public function recreate(Request $request, SubjectSuggestion $subjectSuggestion): View
+    {
+        if ($request->get('email') !== $subjectSuggestion->email) {
+            $subjectSuggestion = null;
+        }
+        return view('subject_suggestions.create', compact('subjectSuggestion'));
+    }
+
     public function store(Request $request): JsonResponse
     {
         $request->validate([

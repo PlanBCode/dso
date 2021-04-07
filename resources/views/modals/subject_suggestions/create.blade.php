@@ -33,7 +33,7 @@
                                     <div class="pt-8 sm:justify-start">
                                         <label for="title" class="form-label">
                                             Hoe noem je het onderzoek? *<br>
-                                            <input type="text" name="title" id="title" class="form-control" data-to-summary="title" required>
+                                            <input type="text" name="title" id="title" class="form-control" data-to-summary="title" required value="@if(isset($subjectSuggestion)){{ $subjectSuggestion->title }}@endif">
                                             <div class="invalid-feedback">
                                                 Dit veld is verplicht.
                                             </div>
@@ -42,7 +42,7 @@
                                     <div class="pt-8 sm:justify-start">
                                         <label for="description">
                                             Wat zou je willen dat de Stadsbron gaat onderzoeken? (max 200 woorden) *<br>
-                                            <textarea type="text" name="description" id="description" rows="8" class="form-control" data-to-summary="description" required></textarea>
+                                            <textarea type="text" name="description" id="description" rows="8" class="form-control" data-to-summary="description" required>@if(isset($subjectSuggestion)){{ $subjectSuggestion->description }}@endif</textarea>
                                             <div class="invalid-feedback">
                                                 Dit veld is verplicht.
                                             </div>
@@ -57,7 +57,7 @@
                                     <div class="pt-8 sm:justify-start">
                                         <label for="importance-input">
                                             Waarom vind je het belangrijk dat dit onderzocht wordt? (max 100 woorden) *<br>
-                                            <textarea type="text" name="importance" id="importance-input" rows="8" class="form-control" data-to-summary="importance" required></textarea>
+                                            <textarea type="text" name="importance" id="importance-input" rows="8" class="form-control" data-to-summary="importance" required>@if(isset($subjectSuggestion)){{ $subjectSuggestion->importance }}@endif</textarea>
                                             <div class="invalid-feedback">
                                                 Dit veld is verplicht.
                                             </div>
@@ -81,7 +81,7 @@
                                         Heb je tijd en zin om zelf mee te helpen met het onderzoek?<br>
                                         <label for="skills">
                                             Zo ja, welke vaardigheden heb je of zou je willen opdoen?<br>
-                                            <textarea type="text" name="skills" id="skills" rows="8" class="form-control" data-to-summary="skills"></textarea>
+                                            <textarea type="text" name="skills" id="skills" rows="8" class="form-control" data-to-summary="skills">@if(isset($subjectSuggestion)){{ $subjectSuggestion->skills }}@endif</textarea>
                                         </label>
                                     </div>
                                     <div class="pt-8 sm:justify-start">
@@ -120,28 +120,28 @@
                                                 <div class="grid grid-cols-1 md:grid-cols-2">
                                                     <label for="firstname" class="pr-2">
                                                         Voornaam *<br>
-                                                        <input type="text" name="firstname" id="firstname" class="form-control" required>
+                                                        <input type="text" name="firstname" id="firstname" class="form-control" required value="@if(isset($subjectSuggestion)){{ $subjectSuggestion->firstname }}@endif">
                                                         <div class="invalid-feedback">
                                                             Dit veld is verplicht.
                                                         </div>
                                                     </label>
                                                     <label for="lastname" class="pl-2">
                                                         Achternaam *<br>
-                                                        <input type="text" name="lastname" id="lastname" class="form-control" required>
+                                                        <input type="text" name="lastname" id="lastname" class="form-control" required value="@if(isset($subjectSuggestion)){{ $subjectSuggestion->lastname }}@endif">
                                                         <div class="invalid-feedback">
                                                             Dit veld is verplicht.
                                                         </div>
                                                     </label>
                                                     <label for="phone" class="pr-2">
                                                         Telefoonnummer *<br>
-                                                        <input type="text" name="phone" id="phone" class="form-control" required>
+                                                        <input type="text" name="phone" id="phone" class="form-control" required value="@if(isset($subjectSuggestion)){{ $subjectSuggestion->phone }}@endif">
                                                         <div class="invalid-feedback">
                                                             Dit veld is verplicht.
                                                         </div>
                                                     </label>
                                                     <label for="email" class="pl-2">
                                                         E-mailadres *<br>
-                                                        <input type="email" name="email" id="email" class="form-control" required>
+                                                        <input type="email" name="email" id="email" class="form-control" required value="@if(isset($subjectSuggestion)){{ $subjectSuggestion->email }}@endif">
                                                         <div class="invalid-feedback">
                                                             Vul een geldig e-mailadres in.
                                                         </div>
@@ -286,6 +286,9 @@
             $('[data-to-summary]').on('focusout', function () {
                 $('[data-summary="' + $(this).data('to-summary') + '"]').html(nl2br($(this).val()));
             });
+            @if(isset($subjectSuggestion))
+            $('[data-to-summary]').trigger('focusout');
+            @endif
         });
     </script>
 @endsection

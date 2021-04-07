@@ -31,13 +31,13 @@
 
                     </div>
                     <p>De mail naar de indiener:</p>
-                    <form action="{{ route('admin-subject-suggestion-reject', ['subjectSuggestion' => $subject_suggestion]) }}" method="POST" class="needs-validation" novalidate>
+                    <form action="{{ route('admin-subject-reject', ['subject' => $subject]) }}" method="POST" class="needs-validation" novalidate>
                         <div class="border p-6 shadow-sm">
                             @csrf
                             <div class="sm:justify-start">
                                 <label for="subject">
                                     Onderwerp *<br>
-                                    <input type="text" name="subject" id="subject" class="form-control" required value="Jouw onderwerp is afgekeurd">
+                                    <input type="text" name="subject" id="subject" class="form-control" required value="Je onderwerp nog niet aan alle criteria">
                                     <div class="invalid-feedback">
                                         Dit veld is verplicht.
                                     </div>
@@ -53,7 +53,7 @@ Op de website hebben we een aantal vragen opgeschreven waarmee je kunt controler
 
 Wat je zou kunnen doen om het onderwerp passender bij de Stadsbron te maken: ...
 
-Klik hier [link-to-new-subject] om je aangepaste onderwerp opnieuw in te sturen. Of natuurlijk een geheel nieuw onderwerp!
+Klik hier [link-to-recreate-subject] om je aangepaste onderwerp opnieuw in te sturen. Of natuurlijk een geheel nieuw onderwerp!
 
 Vriendelijke groet,
 de Stadsbron</textarea>

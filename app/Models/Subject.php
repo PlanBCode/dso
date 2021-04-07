@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Events\Subject\Created;
+use App\Events\Subject\Updated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,6 +15,15 @@ class Subject extends Model
         'short_description',
         'description',
         'state',
+    ];
+
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'updated' => Updated::class,
     ];
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\Subject\AcceptWithMail;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use File;
@@ -15,6 +16,13 @@ use Illuminate\Support\Facades\Auth;
 
 class SubjectsController extends Controller
 {
+    public function index(Request $request): View
+    {
+        $subjects = Subject::all();
+
+        return view('admin.subjects.index', compact($subjects));
+    }
+
     public function show(Request $request, Subject $subject): View
     {
         $currentUser = Auth::user();
@@ -45,10 +53,32 @@ class SubjectsController extends Controller
         return back();
     }
 
+    public function accept(Request $request, Subject $subject): RedirectResponse
+    {
+        $mailSubject = $request->get('subject');
+        $mailContent = $request->get('message');
+
+        AcceptWithMail::dispatch($subject, true, $mailSubject, $mailContent);
+
+        return back();
+    }
+
+    public function reject(Request $request, Subject $subject): RedirectResponse
+    {
+        $mailSubject = $request->get('subject');
+        $mailContent = $request->get('message');
+
+        AcceptWithMail::dispatch($subject, false, $mailSubject, $mailContent);
+
+        return back();
+    }
+
     public function claim(Request $request, Subject $subject): RedirectResponse
     {
-        $subject->lock_user_id = Auth::user()->id;
-        $subject->save();
+        if (!$subject->lock_user_id) {
+            $subject->lock_user_id = Auth::user()->id;
+            $subject->save();
+        }
 
         return back();
     }
