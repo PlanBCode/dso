@@ -12,10 +12,10 @@ class SubjectsController extends Controller
     public function show(Request $request, Subject $subject): View
     {
         // get previous user id
-        $previous = Subject::where('id', '<', $subject->id)->max('id');
+        $previous = Subject::where('id', '<', $subject->id)->where('state', '=', $subject->state)->max('id');
 
         // get next user id
-        $next = Subject::where('id', '>', $subject->id)->min('id');
+        $next = Subject::where('id', '>', $subject->id)->where('state', '=', $subject->state)->min('id');
 
         return view('subjects.show', compact('subject', 'previous', 'next'));
     }
