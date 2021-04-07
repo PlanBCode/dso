@@ -10,7 +10,8 @@
                     </button>
                 </div>
                 <div class="modal-body bg-white">
-                    <div id="createSuggestionForm"><ul class="nav nav-tabs" role="tablist" data-tabbed-form>
+                    <div id="createSuggestionForm">
+                        <ul class="nav nav-tabs" role="tablist" data-tabbed-form>
                             <li class="nav-item mr-1" role="presentation">
                                 <a class="nav-link active" data-toggle="tab" href="#subject" role="tab" aria-controls="subject" aria-selected="true">onderwerp</a>
                             </li>
