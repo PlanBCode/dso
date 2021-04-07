@@ -25,10 +25,19 @@ class SubjectsController extends Controller
 
     public function show(Request $request, Subject $subject): View
     {
-        $currentUser = Auth::user();
-        $claimUser = $subject->lock_user_id ? User::find($subject->lock_user_id) : null;
+        $claimable = false;
+        $claimed = false;
+        $editable = true;
 
-        return view('admin.subjects.show', compact('subject', 'currentUser', 'claimUser'));
+        if ($subject->state === 'draft') {
+            $claimUser = $subject->lock_user_id ? User::find($subject->lock_user_id) : null;
+
+            $claimable = !$claimUser instanceof User;
+            $claimed = !$claimable && $claimUser->id === Auth::user()->id;
+            $editable = $claimed;
+        }
+
+        return view('admin.subjects.show', compact('subject', 'editable', 'claimable', 'claimed'));
     }
 
     public function update(Request $request, Subject $subject): RedirectResponse
