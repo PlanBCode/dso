@@ -77,6 +77,10 @@ Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], fu
                 ->name('admin-subject-update-state');
             Route::get('/{subject}/remove-image', [SubjectsAdminController::class, 'removeImage'])
                 ->name('admin-subject-remove-image');
+            Route::get('/{subject}/claim', [SubjectsAdminController::class, 'claim'])
+                ->name('admin-subject-claim');
+            Route::get('/{subject}/claim-release', [SubjectsAdminController::class, 'claimRelease'])
+                ->name('admin-subject-claim-release');
         });
     });
 });

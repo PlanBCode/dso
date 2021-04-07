@@ -20,6 +20,7 @@ class CreateSubjectsTable extends Migration
             $table->text('description');
             $table->string('image')->nullable();
             $table->string('state')->default('draft');
+            $table->unsignedInteger('lock_user_id')->nullable();
             $table->timestamps();
         });
     }

@@ -41,6 +41,24 @@ activate event
     admin o<- event: send Subject accept mail
 deactivate event
 
+==Claim==
+admin -> Subject: claim Subject
+activate Subject
+    activate admin
+        admin o<- Subject: claim mail
+        admin <-- Subject: Subject claimed
+    deactivate admin
+deactivate Subject
+
+==Release Claim==
+admin -> Subject: release claim Subject
+activate Subject
+    activate admin
+        admin o<- Subject: release claim mail
+        admin <-- Subject: Subject claim released
+    deactivate admin
+deactivate Subject
+
 ==Acceptance==
 admin -> Subject: accept / reject Subject
 activate Subject
