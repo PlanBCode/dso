@@ -102,9 +102,21 @@
     </div>
     <div class="tab-pane fade" id="vote" role="tabpanel">
         @if($selectedSubjects->count() > 0)
-        <div class="mt-3 mx-5">
-            <p>into stemronde</p>
-        </div>
+            <div class="mt-3 mx-5">
+                <p>Hier zie je de vragen die afgelopen maand ingestuurd zijn.</p>
+                <p>
+                    Naar welk onderwerp ben jij het meest nieuwsgierig? Je kunt stemmen op het onderwerp waar jij het
+                    meest benieuwd naar bent. Wat wil jij het liefst onderzocht zien? Je kunt op één van de onderwerpen
+                    stemmen.
+                </p>
+                <p>
+                    Of met welk onderwerp wil jij zelf meehelpen? Bijvoorbeeld omdat je meer over het onderwerp weet,
+                    omdat je mee wil onderzoeken of omdat je mensen kent die meer over het onderwerp weten. Dat kun je
+                    aangeven door bij het betreffende onderwerp op ‘ik onderzoek mee’ te klikken. Dat kan bij zoveel
+                    onderwerpen als je wil.
+                </p>
+                <p>Na twee weken maken we de balans op welke onderwerpen we – samen met jou – gaan uitpluizen.</p>
+            </div>
         @endif
         <ul class="list-group mt-3 mx-5">
             @forelse($selectedSubjects as $subject)
