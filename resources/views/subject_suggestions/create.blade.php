@@ -18,8 +18,11 @@
         <li><span class="font-semibold text-lg">Is het onderwerp ook interessant voor anderen?</span><br>
             Zijn er meer mensen voor wie je onderwerp interessant of relevant kan zijn?
         </li>
+        <li><span class="font-semibold text-lg">Is het een nieuw onderwerp?</span><br>
+            Wordt er nog niet veel over bericht in lokale media?
+        </li>
     </ul>
-    <p>Wil je graag een onderwerp insturen maar is het zo vertrouwelijk dat je het liever niet op de site publiceren? Stuur dan een mailtje naar <a href="mailto:redactie@destadsbron.nl">redactie@destadsbron.nl</a>. </p>
+    <p>Wil je graag een onderwerp insturen maar is het zo vertrouwelijk dat je het liever niet op de site publiceren? Stuur dan een mailtje naar <a href="mailto:onderzoek@destadsbron.nl ">onderzoek@destadsbron.nl</a>. </p>
 </div>
 
 <div class="pt-8 sm:justify-start">

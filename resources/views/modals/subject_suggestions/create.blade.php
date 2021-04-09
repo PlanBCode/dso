@@ -42,6 +42,7 @@
                                     <div class="pt-8 sm:justify-start">
                                         <label for="description">
                                             Wat zou je willen dat de Stadsbron gaat onderzoeken? (max 200 woorden) *<br>
+                                            Beschrijf het zo specifiek mogelijk. Vertel het ons ook als je al een idee hebt hoe jouw onderwerp onderzocht kan worden.<br>
                                             <textarea type="text" name="description" id="description" rows="8" class="form-control" data-to-summary="description" required>@if(isset($subjectSuggestion)){{ $subjectSuggestion->description }}@endif</textarea>
                                             <div class="invalid-feedback">
                                                 Dit veld is verplicht.
@@ -115,6 +116,7 @@
                                     <div class="pt-8 sm:justify-start">
                                         Als laatste vragen we je je contactgegevens mee te sturen, zo kunnen we je op de hoogte houden over je onderzoek of contact opnemen als we vragen hebben.<br>
                                         We schermen jouw gegevens af voor onbevoegden en delen ze niet met derden.<br>
+                                        Je ontvangt dan een mail van ons om je e-mailadres te bevestigen.<br>
                                         <div class="relative flex pt-8">
                                             <div class="w-100">
                                                 <div class="grid grid-cols-1 md:grid-cols-2">

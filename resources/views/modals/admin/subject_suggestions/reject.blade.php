@@ -37,7 +37,7 @@
                             <div class="sm:justify-start">
                                 <label for="subject">
                                     Onderwerp *<br>
-                                    <input type="text" name="subject" id="subject" class="form-control" required value="Je onderwerp nog niet aan alle criteria">
+                                    <input type="text" name="subject" id="subject" class="form-control" required value="Je onderwerp voldoet nog niet aan alle criteria">
                                     <div class="invalid-feedback">
                                         Dit veld is verplicht.
                                     </div>

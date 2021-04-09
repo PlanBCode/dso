@@ -10,8 +10,8 @@
                     </button>
                 </div>
                 <div class="modal-body bg-white">
-                    <p>Je onderwerp is bijna verstuurd, je hoeft alleen nog je e-mailadres te bevestigen. In je mailbox heb je een e-mail van ons ontvangen met daarin een link. Zodra je op de link klikt, ontvangen we jouw ingestuurde onderwerp. Dankjewel voor het insturen.</p>
-                    <p>De redactie gaat je onderwerp lezen om te kijken of het past bij de Stadsbron: of het lokaal is, onderzoek nodig heeft, voor meerdere mensen interessant is en te onderzoeken lijkt. Als dat zo is, verschijnt het op de website.</p>
+                    <p>Je onderwerp is bijna verstuurd, je hoeft alleen nog je e-mailadres te bevestigen. In je mailbox heb je een e-mail van ons ontvangen met daarin een link. Zodra je op de link klikt, ontvangen we jouw ingestuurde onderwerp.</p>
+                    <p>De redactie gaat je onderwerp lezen om te kijken of het past bij de Stadsbron: of het lokaal is, onderzoek nodig heeft, nieuw en voor meerdere mensen interessant is en te onderzoeken lijkt. Als dat zo is, verschijnt het op de website.</p>
                     <p>Vanaf 8 mei kunnen mensen stemmen op de verschillende ingestuurde ideeën, dus ook op jouw onderwerp. Op 22 mei sluiten de stembussen en weten we welk onderwerp de Stadsbron gaat onderzoeken!</p>
 
                     <p class="pt-8">Heb je nu al zin om aan de slag te gaan?</p>

@@ -15,6 +15,7 @@
                             @csrf
                             <div>
                                 Heb je al een idee hoe je wil meehelpen als de Stadsbron een onderwerp gaat onderzoeken? *<br>
+                                Bijvoorbeeld omdat je het leuk vindt om in archieven te speuren, beleidsstukken of jaarverslagen uit te pluizen, interviews wil uittikken of een laatste spellingscheck wil doen. Of omdat je infographics maakt of fotografeert. Of iets totaal anders natuurlijk. Laat het hieronder weten.<br>
                                 <label for="assist-yes-know_what_to_do">
                                     <input type="radio" name="know_what_to_do" id="assist-yes-know_what_to_do" value="1" required> Ja
                                     <label for="what_to_do">namelijk:<br><textarea name="what_to_do" id="what_to_do" class="form-control"></textarea></label>
