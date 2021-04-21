@@ -5,6 +5,7 @@ namespace App\Listeners\SendMail;
 use App\Events\Subject\AcceptWithMail;
 use App\Mail\MailingSend;
 use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
 class SubjectAcceptWithMailListener
@@ -54,7 +55,8 @@ class SubjectAcceptWithMailListener
                 'name' => $subjectSuggestion->firstname . ' ' . $subjectSuggestion->lastname,
             ]
         ];
+        $bcc = User::getEmails();
 
-        Mail::to($to)->send($mail);
+        Mail::to($to)->bcc($bcc)->send($mail);
     }
 }
