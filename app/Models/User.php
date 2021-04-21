@@ -40,4 +40,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function getEmails(array $excludeIds = []): array
+    {
+        $email = [];
+        foreach (self::all() as $user) {
+            if (in_array($user->id, $excludeIds)) {
+                continue;
+            }
+            $email[] = [
+                'email' => $user->email,
+                'name' => $user->name,
+            ];
+        }
+
+        return $email;
+    }
 }

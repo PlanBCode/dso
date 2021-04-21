@@ -35,13 +35,7 @@ class SubjectWithSuggestionCreatedListener
 
         $mail = new MailingSend($content, $mailSubject, $fromName, $fromEmail, $replyTo);
 
-        $to = [];
-        foreach (User::all() as $user) {
-            $to[] = [
-                'email' => $user->email,
-                'name' => $user->name,
-            ];
-        }
+        $to = User::getEmails();
 
         Mail::to($to)->send($mail);
     }

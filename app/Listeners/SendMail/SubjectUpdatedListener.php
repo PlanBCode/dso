@@ -21,17 +21,7 @@ class SubjectUpdatedListener
 
     protected function getToOtherUsers(): array
     {
-        $to = [];
-        foreach (User::all() as $user) {
-            if ($user->id !== Auth::user()->id) {
-                $to[] = [
-                    'email' => $user->email,
-                    'name' => $user->name,
-                ];
-            }
-        }
-
-        return $to;
+        return User::getEmails([Auth::user()->id]);
     }
 
     protected function handleClaim(Subject $subject)
@@ -76,7 +66,7 @@ class SubjectUpdatedListener
 
         $to = $this->getToOtherUsers();
 
-        Mail::to($to)->send($mail);
+        Mail::to($this->getToOtherUsers())->send($mail);
     }
 
     protected function handleClaimReleased(Subject $subject)
