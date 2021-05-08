@@ -3,12 +3,14 @@
 use App\Http\Controllers\Admin\AssistantsController as AssistantsAdminController;
 use App\Http\Controllers\Admin\HomeController as HomeAdminController;
 use App\Http\Controllers\Admin\SubjectsController as SubjectsAdminController;
+use App\Http\Controllers\Admin\VotingRoundsController as VotingRoundsAdminController;
 use App\Http\Controllers\AssistantsController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\FilesController;
 use App\Http\Controllers\SubjectsController;
 use App\Http\Controllers\SubjectSuggestionsController;
-use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\VoteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], function () {
     Auth::routes();
 
-    Route::get('/', [HomeController::class, 'index'])
+    Route::get('/', [WelcomeController::class, 'index'])
         ->name('home');
 
     Route::group(['prefix' => 'files'], function () {
@@ -36,14 +38,24 @@ Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], fu
             ->name('files-destroy');
     });
 
-    Route::group(['prefix' => 'projects'], function () {
-        Route::get('', [ProjectsController::class, 'index'])
+    // TODO [LRM]: rename to trigger and remove from "projects" prefix
+    Route::group([], function () {
+        Route::get('/projects', [MainController::class, 'index'])
             ->name('projects');
+        Route::get('{context}/trigger', [MainController::class, 'trigger'])
+            ->name('trigger');
     });
 
     Route::group(['prefix' => 'subjects'], function () {
         Route::get('/{subject}', [SubjectsController::class, 'show'])
             ->name('subject-show');
+    });
+
+    Route::group(['prefix' => 'votes'], function () {
+        Route::post('/create', [VoteController::class, 'store'])
+            ->name('vote-store');
+        //Route::get('/confirm-email', [VoteController::class, 'confirmEmail'])
+        //    ->name('vote-confirm-email');
     });
 
     Route::group(['prefix' => 'subject-suggestions'], function () {
@@ -94,6 +106,18 @@ Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], fu
                 ->name('admin-assistant-index');
             Route::get('/{assistant}', [AssistantsAdminController::class, 'show'])
                 ->name('admin-assistant-show');
+        });
+        Route::group(['prefix' => 'voting-rounds'], function () {
+            Route::get('/', [VotingRoundsAdminController::class, 'index'])
+                ->name('admin-voting-round-index');
+            Route::get('/create', [VotingRoundsAdminController::class, 'create'])
+                ->name('admin-voting-round-create');
+            Route::post('/store', [VotingRoundsAdminController::class, 'store'])
+                ->name('admin-voting-round-store');
+            Route::get('/{voting_round}', [VotingRoundsAdminController::class, 'show'])
+                ->name('admin-voting-round-show');
+            Route::get('/{voting_round}/delete', [VotingRoundsAdminController::class, 'destroy'])
+                ->name('admin-voting-round-destroy');
         });
     });
 });

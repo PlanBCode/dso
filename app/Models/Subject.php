@@ -10,6 +10,18 @@ class Subject extends Model
 {
     use HasFactory;
 
+    const STATE_DRAFT = 'draft';
+    const STATE_NEW = 'new';
+    const STATE_REJECTED = 'rejected';
+    const STATE_IN_VOTING_ROUND = 'in voting round';
+
+    const STATES = [
+        self::STATE_DRAFT,
+        self::STATE_NEW,
+        self::STATE_REJECTED,
+        self::STATE_IN_VOTING_ROUND,
+    ];
+
     protected $fillable = [
         'title',
         'short_description',
@@ -35,7 +47,7 @@ class Subject extends Model
     }
 
     /**
-     * The suggestion that belong to this subject
+     * The Suggestion that belong to this Subject
      */
     public function suggestion()
     {

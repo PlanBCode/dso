@@ -25,7 +25,7 @@
                                 <a class="nav-link" data-toggle="tab" href="#submit" role="tab" aria-controls="submit" aria-selected="false" disabled>Versturen</a>
                             </li>
                         </ul>
-                        <form action="{{ route('subject-suggestion-store') }}" method="POST" class="needs-validation" novalidate>
+                        <form method="POST" action="{{ route('subject-suggestion-store') }}" class="needs-validation" novalidate>
                             @csrf
                             <input type="hidden" name="files" />
                             <div class="tab-content">

@@ -10,6 +10,8 @@
 @import "~summernote/dist/summernote.css";
 @import "./dropzone";
 
+@import "~datatables/media/css/jquery.dataTables.css";
+
 html {
     -webkit-text-size-adjust: 100%;
 }
@@ -350,6 +352,12 @@ ul.bullet-list li:not(:first-child) {
 .list-group-item-action:hover, .list-group-item-action:focus {
     text-decoration: revert;
 }
+.hover-underline:hover, .hover-underline:focus {
+    text-decoration: underline;
+}
+.hover-pointer:hover, .hover-pointer:focus {
+    cursor: pointer;
+}
 .border-primary {
     border-color: #007bff !important;
 }
@@ -359,6 +367,12 @@ ul.bullet-list li:not(:first-child) {
     ul {
         padding-inline-start: 20px;
         margin-bottom: 0;
+    }
+}
+
+@media (min-width: 576px) {
+    .sm\:no-max-width {
+        max-width: initial;
     }
 }
 
@@ -411,6 +425,10 @@ ul.bullet-list li:not(:first-child) {
     .sm\:text-right {
         text-align: right;
     }
+
+    .sm\:no-max-width {
+        max-width: initial;
+    }
 }
 
 @media (min-width: 768px) {
@@ -429,6 +447,15 @@ ul.bullet-list li:not(:first-child) {
     .md\:grid-cols-3 {
         grid-template-columns:repeat(3, minmax(0, 1fr));
     }
+
+    .md\:grid-cols-4 {
+        grid-template-columns:repeat(4, minmax(0, 1fr));
+    }
+
+    .md\:grid-cols-5 {
+        grid-template-columns:repeat(5, minmax(0, 1fr));
+    }
+
     .md\:grid-col-gap-2 {
         column-gap: 2rem;
     }

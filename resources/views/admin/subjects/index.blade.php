@@ -33,6 +33,8 @@
         $(document).ready(function () {
             $('#admin-subjects').DataTable({
                 dom: 'Bfrtip',
+                ordering: false,
+                paging: false,
                 columnDefs: [{
                     targets: 'no-sort',
                     orderable: false,

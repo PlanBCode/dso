@@ -44,6 +44,7 @@ class SubjectSuggestionsController extends Controller
         $data['agree_to_terms'] = true;
         $data['email_confirmation_code'] = (string)Str::uuid();
 
+        /** @var SubjectSuggestion $subjectSuggestion */
         $subjectSuggestion = SubjectSuggestion::create($data);
 
         foreach (explode(',', $request->get('files', '')) as $fileId) {

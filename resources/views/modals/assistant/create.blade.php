@@ -11,7 +11,7 @@
                 </div>
                 <div class="modal-body bg-white">
                     <div id="createAssistantForm">
-                        <form action="{{ route('assistant-store') }}" method="POST" class="needs-validation" novalidate>
+                        <form method="POST" action="{{ route('assistant-store') }}" class="needs-validation" novalidate>
                             @csrf
                             <div>
                                 Heb je al een idee hoe je wil meehelpen als de Stadsbron een onderwerp gaat onderzoeken? *<br>

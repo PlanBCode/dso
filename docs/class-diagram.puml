@@ -1,6 +1,11 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+class Email {
+    int id
+    string email
+}
+
 class SubjectSuggestion {
     int id
     int subject_id
@@ -42,23 +47,30 @@ class Subject {
     subjects()
 }
 
-class votingRound {
-    int id
-    subjects()
-}
-
 Subject --> SubjectSuggestion
 Subject --> File
 Subject --> Subject
 
+class VotingRound {
+    int id
+    date start
+    date end
+    subjects()
+}
+
+VotingRound --> Subject
+
 class Vote {
     int id
     int subject_id
+    int voting_round_id
     string email
+    text why_important
     bool agree_to_terms
 }
 
-Subject --> Vote
+Vote --> Subject
+Vote --> VotingRound
 
 class Assistant {
     int id

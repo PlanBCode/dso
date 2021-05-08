@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="pt-8 sm:justify-start">
-    <a href="{{ route('projects') }}" class="btn btn-primary">Terug naar het overzicht</a>
+    <a href="{{ route('projects') }}" class="btn btn-secondary">Terug naar het overzicht</a>
 </div>
 
 <div class="pt-8">

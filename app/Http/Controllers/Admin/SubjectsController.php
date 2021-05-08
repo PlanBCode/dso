@@ -29,7 +29,7 @@ class SubjectsController extends Controller
         $claimed = false;
         $editable = true;
 
-        if ($subject->state === 'draft') {
+        if ($subject->state === Subject::STATE_DRAFT) {
             $claimUser = $subject->lock_user_id ? User::find($subject->lock_user_id) : null;
 
             $claimable = !$claimUser instanceof User;

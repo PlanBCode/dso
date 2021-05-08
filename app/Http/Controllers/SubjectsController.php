@@ -22,13 +22,11 @@ class SubjectsController extends Controller
 
     public function store(Request $request): Response
     {
-        $request->validate([
+        $data = $request->validate([
             'title' => 'required|max:255',
             'short_description' => 'required',
             'description' => 'required',
         ]);
-
-        $data = $request->all();
 
         Subject::create($data);
 

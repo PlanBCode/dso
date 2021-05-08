@@ -11,7 +11,7 @@
                 </div>
                 <div class="modal-body bg-white">
                     <p>De mail naar de indiener:</p>
-                    <form action="{{ route('admin-subject-accept', ['subject' => $subject]) }}" method="POST" class="needs-validation" novalidate>
+                    <form method="POST" action="{{ route('admin-subject-accept', ['subject' => $subject]) }}" class="needs-validation" novalidate>
                         <div class="border p-6 shadow-sm">
                             @csrf
                             <div class="sm:justify-start">

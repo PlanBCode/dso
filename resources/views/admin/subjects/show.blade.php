@@ -55,7 +55,7 @@
 @endif
 
     <div class="pt-8 sm:justify-start">
-        <a href="{{ route('admin-subject-index') }}" class="btn btn-primary">Terug naar het overzicht</a>
+        <a href="{{ route('admin-subject-index') }}" class="btn btn-secondary">Terug naar het overzicht</a>
     </div>
 
 @endsection

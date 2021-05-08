@@ -16,11 +16,11 @@ class SubjectAcceptWithMailListener
 
         $state = $subject->state;
 
-        if ($state !== 'draft') {
+        if ($state !== Subject::STATE_DRAFT) {
             return;
         }
 
-        $newState = $event->isAccept() ? 'new' : 'rejected';
+        $newState = $event->isAccept() ? Subject::STATE_NEW : Subject::STATE_REJECTED;
         $subject->lock_user_id = null;
         $subject->state = $newState;
         $subject->save();

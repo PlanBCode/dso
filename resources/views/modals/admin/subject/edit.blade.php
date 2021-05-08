@@ -11,7 +11,7 @@
                 </div>
                 <div class="modal-body bg-white">
                     <div id="editSubjectForm">
-                        <form action="{{ route('admin-subject-update', ['subject' => $subject]) }}" method="POST" class="needs-validation" novalidate>
+                        <form method="POST" action="{{ route('admin-subject-update', ['subject' => $subject]) }}" class="needs-validation" novalidate>
                             @method('PUT')
                             @csrf
                             <input type="hidden" name="image" />

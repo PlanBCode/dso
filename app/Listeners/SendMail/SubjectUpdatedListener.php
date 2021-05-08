@@ -26,7 +26,7 @@ class SubjectUpdatedListener
 
     protected function handleClaim(Subject $subject)
     {
-        if ($subject->state !== 'draft') {
+        if ($subject->state !== Subject::STATE_DRAFT) {
             return;
         }
 
@@ -66,7 +66,7 @@ class SubjectUpdatedListener
 
         $to = $this->getToOtherUsers();
 
-        Mail::to($this->getToOtherUsers())->send($mail);
+        Mail::to($to)->send($mail);
     }
 
     protected function handleClaimReleased(Subject $subject)
@@ -106,10 +106,10 @@ class SubjectUpdatedListener
         }
 
         switch ($newState) {
-            case 'new':
+            case Subject::STATE_NEW:
                 $this->handleStateNew($subject);
                 break;
-            case 'rejected':
+            case Subject::STATE_REJECTED:
                 $this->handleStateRejected($subject);
                 break;
         }

@@ -35,7 +35,7 @@
                         {{ __('logout') }}
                     </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    <form method="POST" action="{{ route('logout') }}" id="logout-form" class="d-none">
                         @csrf
                     </form>
                 @else
@@ -55,8 +55,8 @@
 
     </div>
 
-    @include('modals/assistant.create')
-    @include('modals/assistant.after-create')
+    @include('modals.assistant.create')
+    @include('modals.assistant.after-create')
 
     <!-- Modals -->
     @yield('modals')

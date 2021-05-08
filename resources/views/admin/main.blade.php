@@ -6,7 +6,7 @@
 </div>
 
 <div class="mt-8 bg-white {{ $darkPrefix }}bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-    <div class="grid grid-cols-1 md:grid-cols-2">
+    <div class="grid grid-cols-1 md:grid-cols-3">
         <a href="{{ route('admin-subject-index') }}">
         <div class="p-6">
             <div class="flex items-center">
@@ -30,6 +30,20 @@
             <div class="">
                 <div class="mt-2 text-gray-600 {{ $darkPrefix }}text-gray-400 text-sm">
                     Mensen die willen helpen met het onderzoek
+                </div>
+            </div>
+        </div>
+        </a>
+
+        <a href="{{ route('admin-voting-round-index') }}" class="bg-transparent">
+        <div class="p-6 border-t {{ $darkPrefix }}border-gray-700 md:border-t-0 md:border-l">
+            <div class="flex items-center">
+                <div class="text-lg leading-7 font-semibold">Stemrondes</div>
+            </div>
+
+            <div class="">
+                <div class="mt-2 text-gray-600 {{ $darkPrefix }}text-gray-400 text-sm">
+                    Beheer de stemrondes
                 </div>
             </div>
         </div>
