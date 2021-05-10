@@ -26,7 +26,7 @@
                         <a href="#" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#subjectSuggestionsModal">Stuur nog een onderwerp in</a>
                     </div>
                     <div class="pt-4 sm:justify-start">
-                        <a href="{{ route('projects') }}" class="btn btn-primary">Terug naar het overzicht</a>
+                        <a href="{{ route('main') }}" class="btn btn-primary">Terug naar het overzicht</a>
                     </div>
                 </div>
                 <div class="modal-footer"></div>

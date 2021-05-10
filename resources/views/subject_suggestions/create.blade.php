@@ -26,12 +26,11 @@
 </div>
 
 <div class="pt-8 sm:justify-start">
-    <a href="{{ route('projects') }}" class="btn btn-primary">Eerst andere onderwerpen bekijken</a>
+    <a href="{{ route('main') }}" class="btn btn-primary">Eerst andere onderwerpen bekijken</a>
 </div>
 <div class="pt-8 sm:justify-start">
-    <button href="{{ route('projects') }}" class="btn btn-primary" data-toggle="modal" data-target="#subjectSuggestionsModal">Ik wil een onderwerp insturen</button>
+    <button href="{{ route('main') }}" class="btn btn-primary" data-toggle="modal" data-target="#subjectSuggestionsModal">Ik wil een onderwerp insturen</button>
 </div>
 @endsection
 
 @include('modals.subject_suggestions.create')
-@include('modals.subject_suggestions.after-create')

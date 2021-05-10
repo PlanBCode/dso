@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Classes\Workflow\Flows\Vote;
 use App\Classes\Workflow\WorkflowEngine;
+use App\Models\Vote as VoteModel;
 use App\Models\VotingRound;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class VoteController extends Controller
 {
-    public function store(Request $request, WorkflowEngine $workflowEngine): RedirectResponse
+    public function store(Request $request, WorkflowEngine $workflowEngine): JsonResponse
     {
         $data = $request->validate([
             'importance' => 'string|nullable',
@@ -25,8 +27,11 @@ class VoteController extends Controller
         $data['contact'] =  $request->has('contact');
         $data['voting_round_id'] = VotingRound::inProgress()->first()->id;
 
-        $workflowEngine->createWorkflow(Vote::class, $data);
+        /** @var Vote $workflow */
+        $workflow = $workflowEngine->createWorkflow(Vote::class, $data);
+        $vote = $workflow->getVoterVote($data['voting_round_id'], $data['email']);
+        $overwrite = $vote instanceof VoteModel;
 
-        return back();
+        return response()->json(['status' => 'ok', 'overwrite' => $overwrite]);
     }
 }

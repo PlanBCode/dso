@@ -22,6 +22,7 @@ class Vote extends Model
         'why_important',
         'extra',
         'disabled',
+        'agree_to_terms',
     ];
 
     /**

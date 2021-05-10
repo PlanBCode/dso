@@ -10817,6 +10817,16 @@ input:focus, textarea:focus {
   background-color: rgba(237, 242, 247, var(--bg-opacity));
 }
 
+.modal-dialog-scrollable .modal-body {
+  overflow-y: scroll;
+}
+
+.modal-footer__with-content {
+  border-bottom: 25px #edf2f7 solid;
+  background-color: #fff;
+  justify-content: flex-start;
+}
+
 ul.bullet-list li:not(:first-child) {
   margin-top: 1rem;
 }

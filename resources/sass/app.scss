@@ -345,6 +345,16 @@ input:focus, textarea:focus {
     background-color: #edf2f7;
     background-color: rgba(237, 242, 247, var(--bg-opacity));
 }
+.modal-dialog-scrollable .modal-body{
+    overflow-y: scroll;
+}
+.modal-footer {
+    &__with-content {
+        border-bottom: 25px #edf2f7 solid;
+        background-color: #fff;
+        justify-content: flex-start;
+    }
+}
 
 ul.bullet-list li:not(:first-child) {
     margin-top: 1rem;
@@ -361,7 +371,6 @@ ul.bullet-list li:not(:first-child) {
 .border-primary {
     border-color: #007bff !important;
 }
-
 
 [data-summary=sources] {
     ul {

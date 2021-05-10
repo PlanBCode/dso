@@ -26,12 +26,7 @@
                     <div data-help-section style="display: none;">
                         <div class="sm:justify-start mb-3">
                             Dit zijn de onderwerpen die je wil meehelpen onderzoeken:
-                            <div data-display-help-titles>
-
-                            </div>
-    {{--                        <br><strong>--- onderwerp naam hier ---</strong><br>--}}
-    {{--                        <strong>--- onderwerp naam hier ---</strong><br>--}}
-    {{--                        <strong>--- onderwerp naam hier ---</strong>--}}
+                            <div data-display-help-titles></div>
                         </div>
                         <div class="sm:justify-start mb-3">
                             Heb je al een idee hoe je wil meehelpen als dit de Stadsbron dit onderwerp gaat onderzoeken?<br>
@@ -52,18 +47,23 @@
                         <label for="email">
                             E-mailadres *<br>
                             <input type="email" name="email" id="email" required>
+                            <div class="invalid-feedback">
+                                Dit veld is verplicht.
+                            </div>
                         </label>
                     </div>
                     <div class="pt-8 sm:justify-start">
                         <label for="agree">
                             <input type="checkbox" name="agree_to_terms" id="agree" required> Ik ga ermee akkoord dat mijn contactgegevens gebruikt worden om me op de hoogte te houden over de Stadsbron Onderzoekt. Mijn gegevens worden nergens anders dan voor dit doel gebruikt en niet met derden gedeeld. *<br>
+                            <div class="invalid-feedback">
+                                Dit veld is verplicht.
+                            </div>
                         </label>
                     </div>
-                    <div class="pt-8 sm:justify-start">
-                        <button type="submit" class="btn btn-primary">Sla op en verstuur</button>
-                    </div>
                 </div>
-                <div class="modal-footer"></div>
+                <div class="modal-footer modal-footer__with-content">
+                    <button type="submit" class="btn btn-primary">Sla op en verstuur</button>
+                </div>
             </div>
         </div>
     </div>

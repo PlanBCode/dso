@@ -38,10 +38,9 @@ Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], fu
             ->name('files-destroy');
     });
 
-    // TODO [LRM]: rename to trigger and remove from "projects" prefix
-    Route::group([], function () {
+    Route::group(['name' => 'main'], function () {
         Route::get('/projects', [MainController::class, 'index'])
-            ->name('projects');
+            ->name('main');
         Route::get('{context}/trigger', [MainController::class, 'trigger'])
             ->name('trigger');
     });

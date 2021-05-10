@@ -15,7 +15,7 @@
         <p>Na twee weken maken we de balans op welke onderwerpen we – samen met jou – gaan uitpluizen.</p>
     </div>
 @else
-<form method="POST" action="{{ route('vote-store') }}" name="vote-form">
+<form method="POST" action="{{ route('vote-store') }}" name="vote-form" class="needs-validation" novalidate>
 @csrf
 <ul class="list-group mt-3 mx-sm-0 mx-md-5">
     @include('modals.vote.create', ['voting_round' => $votingRound])
@@ -72,15 +72,19 @@
 @section('scripts')
     @parent
     <script>
-        $(document).ready(function () {
+        $(function () { // jQuery ready
+            'use strict'
+
             let $form = $('[name=vote-form]');
             let hasVote = false;
+
             $form.find('input[data-vote-title]').on('change', function () {
                 $('[data-target="#voteModal"]').attr('disabled', false).removeClass('disabled');
                 $('[data-display-vote-title]').text($form.find('[data-vote-title]:checked').data('vote-title'));
                 hasVote = true;
                 $('[data-vote-section]').show();
             });
+
             $form.find('[data-help-title]').on('change', function () {
                 $('[data-target="#voteModal"]').attr('disabled', false).removeClass('disabled');
                 let titles = '';
@@ -94,6 +98,66 @@
                     $('[data-target="#voteModal"]').attr('disabled', true).addClass('disabled');
                 }
             });
+
+            $form[0].addEventListener('submit', function (event) {
+                event.preventDefault()
+                event.stopPropagation()
+                if (this.checkValidity()) {
+                    let data = {};
+                    $form.find('input, select, textarea').each(function () {
+                        data[$(this).attr('name')] = $(this).val();
+                    });
+
+                    $.ajax({
+                        url: $form.attr('action'),
+                        type: 'POST',
+                        data: data,
+                        success: function (response) {
+                            if (response) {
+                                $('#voteModal').modal('hide');
+                                $('#voteModalSubmittedModal').modal('show');
+                                if (response.overwrite) {
+                                    $('[data-vote-overwrite]').show();
+                                    $('[data-vote-new]').hide();
+                                }
+
+                                $('[data-display-vote-title]').html('');
+                                $('[data-display-help-titles]').html('');
+
+                                $form.find('input, select, textarea').each(function () {
+                                    if ($(this).attr('name') !== 'email') {
+                                        $(this).removeClass('touched is-valid');
+                                        if (
+                                            ($(this).attr('type') === 'radio' || $(this).attr('type') === 'checkbox')
+                                            && $(this).is(':checked')
+                                        ) {
+                                            $(this).prop('checked', false).removeAttr('checked');
+                                        } else {
+                                            $(this).val('');
+                                        }
+                                    }
+                                });
+                            }
+                        },
+                    });
+                }
+            }, false);
+
+            // submit button
+            let toggleSubmitButtons = function () {
+                let enable = $form[0].checkValidity();
+                let $button = $form.find('.modal-footer button');
+                $button.toggleClass('disabled', !enable);
+                $button.attr('disabled', !enable);
+            };
+            $form.find('input, select, textarea').on('keyup', function () {
+                toggleSubmitButtons();
+            });
+            $form.find('input[type="radio"], input[type="checkbox"]').on('change', function () {
+                toggleSubmitButtons();
+            });
         });
     </script>
 @endsection
+
+@include('modals.vote.after-create')
