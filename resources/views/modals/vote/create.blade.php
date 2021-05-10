@@ -46,7 +46,7 @@
                         Je ontvangt een mail van ons met daarin een bevestigingslink.
                         <label for="email">
                             E-mailadres *<br>
-                            <input type="email" name="email" id="email" required>
+                            <input type="email" name="email" id="email" class="form-control" required>
                             <div class="invalid-feedback">
                                 Dit veld is verplicht.
                             </div>
