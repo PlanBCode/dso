@@ -103,10 +103,7 @@
                 event.preventDefault()
                 event.stopPropagation()
                 if (this.checkValidity()) {
-                    let data = {};
-                    $form.find('input, select, textarea').each(function () {
-                        data[$(this).attr('name')] = $(this).val();
-                    });
+                    let data = $(this).serialize();
 
                     $.ajax({
                         url: $form.attr('action'),
