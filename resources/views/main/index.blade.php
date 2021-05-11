@@ -60,28 +60,29 @@
         </div>
         </a>
 
-        <a href="https://planb.coop/betaal/stadsbrononderzoekt" target="_blank" class="bg-transparent">
-            <div class="p-6 h-100 border-t {{ $darkPrefix }}border-gray-700 md:border-t-0 md:border-l">
-                <div class="flex items-center">
-                    <div class="text-lg leading-7 font-semibold">Stem!</div>
-                </div>
+        <a href="#" class="bg-transparent" data-to-tab="2">
+        <div class="p-6 h-100 border-t {{ $darkPrefix }}border-gray-700 md:border-t-0 md:border-l">
+            <div class="flex items-center">
+                <div class="text-lg leading-7 font-semibold">Stem!</div>
+            </div>
 
-                <div class="">
-                    <div class="mt-2 text-gray-600 {{ $darkPrefix }}text-gray-400 text-sm">
-                        Wil je stemmen op een onderwerp?
-                    </div>
+            <div class="">
+                <div class="mt-2 text-gray-600 {{ $darkPrefix }}text-gray-400 text-sm">
+                    Wil je stemmen op een onderwerp?
                 </div>
             </div>
+        </div>
         </a>
 
     </div>
 </div>
 
 <div class="pt-8"></div>
-
+<a id="subjects"></a>
 <div class="text-center pt-8 mx-5 sm:justify-start">
     <h3>Onderwerpen:</h3>
 </div>
+
 <ul class="nav nav-tabs mx-5" role="tablist">
     <li class="nav-item mr-1" role="presentation">
         <a class="nav-link{{ $votingRound ? '' : ' active' }}" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="{{ $votingRound ? 'false' : 'true' }}">Nieuw ingestuurd</a>
@@ -114,4 +115,23 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    @parent
+    <script>
+        $(function () { // jQuery ready
+            'use strict'
+
+            $('[data-to-tab]').on('click', function(e) {
+                e.preventDefault();
+                let index = $(this).data('to-tab');
+                $('[role="tablist"] [role="presentation"]:nth-child('+index+') [role="tab"]').tab('show');
+
+                $('html, body').animate({
+                    scrollTop: $('#subjects').offset().top
+                }, 1000);
+            });
+        });
+    </script>
 @endsection
