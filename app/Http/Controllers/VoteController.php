@@ -20,7 +20,7 @@ class VoteController extends Controller
             'assist' => 'string|nullable',
             'email' => 'required|email',
             'agree_to_terms' => 'accepted',
-            'vote' => 'required|integer',
+            'vote' => 'integer',
             'help' => 'array',
         ]);
         $data['agree_to_terms'] = true;
