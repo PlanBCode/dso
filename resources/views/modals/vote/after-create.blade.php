@@ -11,11 +11,8 @@
                 </div>
                 <div class="modal-body bg-white">
 
-                    <div class="pt-8 sm:justify-start">
-                        <h3>Dankjewel voor je stem!</h3>
-                        <p data-vote-overwrite style="display: none;">Je hebt al eerder een stem uitgebracht. Omdat je één keer per stemronde een onderwerp kunt kiezen, telt alleen je meest recente stem. Je vorige stem is hiermee dus komen te vervallen.</p>
-                        <p data-vote-new>Over twee weken weten we welk onderwerp de meeste stemmen heeft gekregen en welk onderwerp dus onderzocht gaat worden door de Stadsbron. We houden je op de hoogte wanneer het zover is! Je krijgt dan automatisch een mailtje.</p>
-                    </div>
+                    <span data-body-text>
+                    </span>
 
                     <div class="pt-4 sm:justify-start">
                         <a href="{{ route('main') }}" class="btn btn-primary">Terug naar het overzicht</a>

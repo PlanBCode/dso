@@ -27,6 +27,7 @@
             <div class="col-6 align-self-center">
                 <div class="float-right">
                     <button class="btn btn-primary disabled" data-dismiss="modal" data-toggle="modal" data-target="#voteModal" onclick="return false;" disabled>Sla mijn keuze op en verstuur</button>
+                    <button class="btn btn-primary" style="display: none;" data-dismiss="modal" data-toggle="modal" data-target="#voteModalSubmittedModal" onclick="return false;">Keuze is verstuurd</button>
                 </div>
             </div>
         </div>
@@ -64,6 +65,7 @@
     @endforelse
     <div class="align-self-end mb-3">
         <button class="btn btn-primary disabled" data-dismiss="modal" data-toggle="modal" data-target="#voteModal" onclick="return false;" disabled>Sla mijn keuze op en verstuur</button>
+        <button class="btn btn-primary" style="display: none;" data-dismiss="modal" data-toggle="modal" data-target="#voteModalSubmittedModal" onclick="return false;">Keuze is verstuurd</button>
     </div>
 </ul>
 </form>
@@ -111,29 +113,25 @@
                         data: data,
                         success: function (response) {
                             if (response) {
+                                let $modal = $('#voteModalSubmittedModal');
                                 $('#voteModal').modal('hide');
-                                $('#voteModalSubmittedModal').modal('show');
-                                if (response.overwrite) {
-                                    $('[data-vote-overwrite]').show();
-                                    $('[data-vote-new]').hide();
-                                }
+                                $modal.modal('show');
+                                $('button[data-toggle="modal"][data-target="#voteModal"]').hide();
+                                $('button[data-toggle="modal"][data-target="#voteModalSubmittedModal"]').show();
 
-                                $('[data-display-vote-title]').html('');
-                                $('[data-display-help-titles]').html('');
+                                let $bodyText = $modal.find('[data-body-text]');
+                                for (let i in response.lines) {
+                                    let lineData = response.lines[i];
 
-                                $form.find('input, select, textarea').each(function () {
-                                    if ($(this).attr('name') !== 'email') {
-                                        $(this).removeClass('touched is-valid');
-                                        if (
-                                            ($(this).attr('type') === 'radio' || $(this).attr('type') === 'checkbox')
-                                            && $(this).is(':checked')
-                                        ) {
-                                            $(this).prop('checked', false).removeAttr('checked');
-                                        } else {
-                                            $(this).val('');
-                                        }
+                                    let $el = $('<p></p>');
+                                    if (lineData['type'] === 'header') {
+                                        $el = $('<h3></h3>');
+                                    } else if (lineData['type'] === 'warning') {
+                                        $el = $('<p></p>').addClass('font-warning');
                                     }
-                                });
+                                    $el.text(lineData['text']);
+                                    $bodyText.append($el);
+                                }
                             }
                         },
                     });

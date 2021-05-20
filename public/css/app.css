@@ -10570,6 +10570,12 @@ video {
   font-weight: 600;
 }
 
+.font-warning {
+  font-size: larger;
+  font-weight: bold;
+  color: red;
+}
+
 .h-5 {
   height: 1.25rem;
 }
