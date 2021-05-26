@@ -13,7 +13,7 @@
                 <th>Begin</th>
                 <th>End</th>
                 <th>Progress state</th>
-                <th>Progress processed</th>
+                <th>In progress</th>
                 <th>Subjects</th>
             </tr>
             </thead>

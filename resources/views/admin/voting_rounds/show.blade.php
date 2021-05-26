@@ -26,7 +26,7 @@
                             <span>{{ $voting_round->getProgressState() }}</span><br>
                         </div>
                         <div class="col-12 pt-8 pl-0">
-                            <b>Progress processed:</b><br>
+                            <b>In progress:</b><br>
                             <span>@if($voting_round->in_progress)Yes @else No @endif</span><br>
                         </div>
                     </div>
