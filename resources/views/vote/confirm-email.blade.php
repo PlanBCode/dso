@@ -3,7 +3,7 @@
 @section('content')
 <div class="pt-8 sm:justify-start">
     <h3>Dankjewel, we hebben je stem of je aanmelding ontvangen.</h3>
-    <p>Ben je benieuwd welk onderwerp de Stadsbron uiteindelijk gaat onderzoeken? Tot en met 22 mei kan er gestemd worden en op 23 mei weten we welk onderwerp gekozen is. Je krijgt dan een mailtje van ons.</p>
+    <p>Ben je benieuwd welk onderwerp de Stadsbron uiteindelijk gaat onderzoeken? Zodra we weten welk onderwerp de meeste stemmen heeft gekregen krijg je een mailtje van ons.</p>
 </div>
 
 <div class="pt-8 sm:justify-start">

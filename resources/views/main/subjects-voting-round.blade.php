@@ -75,7 +75,6 @@
         @include('modals.subject.show', ['modalPrefix' => 'showVotingSubjectModal', 'subject' => $subject, 'previous' => $prevSubject, 'next' => $nextSubject])
     @empty
         <p>Binnenkort kun je hier stemmen op de ingestuurde onderwerpen die jij belangrijk vindt. Zo bepaal je mee wat de Stadsbron gaat onderzoeken.</p>
-        <p>De eerstvolgende stemronde begint op 8 mei.</p>
         <p>Heb jij een idee wat de Stadsbron écht moet gaan onderzoeken? Je kunt nu al onderwerpen insturen. Klik dan hierboven op ‘Stuur een onderwerp in’.</p>
     @endforelse
     @if($votingRoundInProgress)
