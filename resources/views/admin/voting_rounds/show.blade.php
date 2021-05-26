@@ -59,11 +59,7 @@
                 <tbody>
 
                 @php
-                    if ($voting_round->getProgressState() === 'in progress') {
-                        $subjects = $voting_round->subjects->all();
-                    } else {
-                        $subjects = $voting_round->getSubjectsSortedByVoteCount();
-                    }
+                    $subjects = $voting_round->subjects->all();
                 @endphp
 
                 @foreach ($subjects as $subject)
@@ -97,6 +93,7 @@
             $('#admin-subjects').DataTable({
                 dom: 'Bfrtip',
                 paging: false,
+                @if($voting_round->getProgressState() === 'completed')order: [[2, 'desc']],@endif
                 columnDefs: [{
                     targets: 'no-sort',
                     orderable: false,
