@@ -14,12 +14,16 @@ class Subject extends Model
     const STATE_NEW = 'new';
     const STATE_REJECTED = 'rejected';
     const STATE_IN_VOTING_ROUND = 'in voting round';
+    const STATE_ACTIVE = 'active';
+    const STATE_ARCHIVED = 'archived';
 
     const STATES = [
         self::STATE_DRAFT,
         self::STATE_NEW,
         self::STATE_REJECTED,
         self::STATE_IN_VOTING_ROUND,
+        self::STATE_ACTIVE,
+        self::STATE_ARCHIVED,
     ];
 
     protected $fillable = [

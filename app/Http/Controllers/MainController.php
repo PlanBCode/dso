@@ -14,9 +14,17 @@ class MainController extends Controller
     public function index(Request $request): View
     {
         $newSubjects = Subject::where('state', '=', Subject::STATE_NEW)->get();
-        $votingRound = VotingRound::inProgress()->first();
 
-        return view('main.index', compact('newSubjects', 'votingRound'));
+        $votingRound = VotingRound::inProgress()->first();
+        $votingRoundInProgress = $votingRound instanceof VotingRound;
+        if (!$votingRoundInProgress) {
+            $votingRound = VotingRound::latest('id')->first();
+        }
+
+        $activeSubjects = Subject::where('state', '=', Subject::STATE_ACTIVE)->get();
+        $archivedSubjects = Subject::where('state', '=', Subject::STATE_ARCHIVED)->get();
+
+        return view('main.index', compact('newSubjects', 'votingRound', 'votingRoundInProgress', 'activeSubjects', 'archivedSubjects'));
     }
 
     public function trigger(Request $request, string $context, WorkflowEngine $workflowEngine): View

@@ -19,7 +19,7 @@ class CreateVotesTable extends Migration
             $table->foreignId('voting_round_id')->constrained();
             $table->foreignId('subject_id')->constrained();
             $table->string('email');
-            $table->string('why_important')->nullable();
+            $table->text('why_important')->nullable();
             $table->boolean('agree_to_terms');
             $table->text('extra')->nullable();
             $table->boolean('disabled')->default(false);

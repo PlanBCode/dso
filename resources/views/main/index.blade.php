@@ -85,10 +85,10 @@
 
 <ul class="nav nav-tabs mx-5" role="tablist">
     <li class="nav-item mr-1" role="presentation">
-        <a class="nav-link{{ $votingRound ? '' : ' active' }}" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="{{ $votingRound ? 'false' : 'true' }}">Nieuw ingestuurd</a>
+        <a class="nav-link{{ $votingRoundInProgress ? '' : ' active' }}" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="{{ $votingRoundInProgress ? 'false' : 'true' }}">Nieuw ingestuurd</a>
     </li>
     <li class="nav-item mx-1" role="presentation">
-        <a class="nav-link{{ $votingRound ? ' active' : '' }}" data-toggle="tab" href="#vote" role="tab" aria-controls="vote" aria-selected="{{ $votingRound ? 'true' : 'false' }}">In de stemronde</a>
+        <a class="nav-link{{ $votingRoundInProgress ? ' active' : '' }}" data-toggle="tab" href="#vote" role="tab" aria-controls="vote" aria-selected="{{ $votingRoundInProgress ? 'true' : 'false' }}">In de stemronde</a>
     </li>
     <li class="nav-item mx-1" role="presentation">
         <a class="nav-link" data-toggle="tab" href="#actual" role="tab" aria-controls="actual" aria-selected="false">Lopende onderzoeken</a>
@@ -98,21 +98,17 @@
     </li>
 </ul>
 <div class="tab-content">
-    <div class="tab-pane fade{{ $votingRound ? '' : ' show active' }}" id="new" role="tabpanel">
+    <div class="tab-pane fade{{ $votingRoundInProgress ? '' : ' show active' }}" id="new" role="tabpanel">
         @include('main.subjects-new', ['subjects' => $newSubjects->all()])
     </div>
-    <div class="tab-pane fade{{ $votingRound ? ' show active' : '' }}" id="vote" role="tabpanel">
-        @include('main.subjects-voting-round', ['votingRound' => $votingRound])
+    <div class="tab-pane fade{{ $votingRoundInProgress ? ' show active' : '' }}" id="vote" role="tabpanel">
+        @include('main.subjects-voting-round', ['votingRound' => $votingRound, 'votingRoundInProgress' => $votingRoundInProgress])
     </div>
     <div class="tab-pane fade" id="actual" role="tabpanel">
-        <div class="mt-3 mx-5">
-            <p>Zodra het eerste onderzoek van start gaat, kun je hier bekijken met welke onderzoeken de Stadsbron Onderzoekt bezig is. Je kunt hier ook zien welke onderzoeken al afgerond zijn en welke producties we daarover gemaakt hebben. Op dit moment zijn die er nog niet.</p>
-        </div>
+        @include('main.subjects-active', ['subjects' => $activeSubjects->all()])
     </div>
     <div class="tab-pane fade" id="archive" role="tabpanel">
-        <div class="mt-3 mx-5">
-            <p>Binnenkort verschijnen hier de onderwerpen die al eerder ingestuurd zijn. Zo kun je altijd controleren of jouw onderwerp al eerder is langsgekomen in een stemronde.</p>
-        </div>
+        @include('main.subjects-archived', ['subjects' => $archivedSubjects->all()])
     </div>
 </div>
 @endsection
@@ -123,15 +119,24 @@
         $(function () { // jQuery ready
             'use strict'
 
-            $('[data-to-tab]').on('click', function(e) {
-                e.preventDefault();
-                let index = $(this).data('to-tab');
+            let toTab = function (index) {
                 $('[role="tablist"] [role="presentation"]:nth-child('+index+') [role="tab"]').tab('show');
 
                 $('html, body').animate({
                     scrollTop: $('#subjects').offset().top
                 }, 1000);
+            };
+
+            $('[data-to-tab]').on('click', function(e) {
+                e.preventDefault();
+                toTab($(this).data('to-tab'));
             });
+
+            const urlParams = new URLSearchParams(window.location.search);
+            let tab = urlParams.get('tab');
+            if (tab) {
+                toTab(tab);
+            }
         });
     </script>
 @endsection

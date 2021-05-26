@@ -34,7 +34,6 @@ class VoteController extends Controller
         $vote = $workflow->getVoterVote($data['voting_round_id'], $data['email']);
         $overwrite = $vote instanceof VoteModel;
 
-
         $lines = [];
         if ($submittedVote && $submittedHelp) {
             $lines[] = ['type' => 'header', 'text' => 'Bedankt voor je stem, en leuk dat je wilt meehelpen onderzoeken.'];

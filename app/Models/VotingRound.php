@@ -52,6 +52,11 @@ class VotingRound extends Model
         return $this->belongsToMany(Subject::class);
     }
 
+    public function winning_subjects()
+    {
+        return $this->belongsToMany(Subject::class, 'winning_subject_voting_round');
+    }
+
     public function votes()
     {
         return $this->hasMany(Vote::class)->isEnabled();
@@ -103,5 +108,32 @@ class VotingRound extends Model
             return self::PROGRESS_STATE_COMPLETED;
         }
         return self::PROGRESS_STATE_UNKNOWN;
+    }
+
+    public function getVotes(): array
+    {
+        $votes = array_fill_keys($this->subjects->pluck('id')->all(), 0);
+        foreach ($this->votes as $vote) {
+            if (empty($votes[$vote->subject_id])) {
+                $votes[$vote->subject_id] = 0;
+            }
+            $votes[$vote->subject_id]++;
+        }
+
+        return $votes;
+    }
+
+    public function getSubjectsSortedByVoteCount(): array
+    {
+        $votes = $this->getVotes();
+        arsort($votes);
+
+        $sorted = [];
+        $subjects = $this->subjects->keyBy('id');
+        foreach ($votes as $subjectId => $votes) {
+            $sorted[] = $subjects[$subjectId];
+        }
+
+        return $sorted;
     }
 }

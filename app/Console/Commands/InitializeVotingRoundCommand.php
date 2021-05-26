@@ -38,8 +38,6 @@ class InitializeVotingRoundCommand extends Command
 
     public function handleBegin()
     {
-        //$workflow = new \App\Classes\Workflow\Flows\VotingRound([], \App\Classes\Workflow\Flows\VotingRound::STATE_NEW);
-
         /** @var Collection|VotingRound[] $votingRounds */
         $votingRounds = VotingRound::where('in_progress', '=', false)->inProgress()->get();
 
@@ -65,6 +63,8 @@ class InitializeVotingRoundCommand extends Command
         $votingRounds = VotingRound::where('in_progress', '=', true)->completed()->get();
 
         foreach ($votingRounds as $votingRound) {
+            $wf = new \App\Classes\Workflow\Flows\VotingRound();
+            $wf->handleCompleted($votingRound);
             $votingRound->update(['in_progress' => false]);
         }
     }
