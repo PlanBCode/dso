@@ -80,6 +80,8 @@ Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], fu
     Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
         Route::get('/', [HomeAdminController::class, 'show'])
             ->name('admin-home');
+        Route::get('/application-update', [HomeAdminController::class, 'updateApplication'])
+            ->name('admin-update-application');
         Route::group(['prefix' => 'subjects'], function () {
             Route::get('/', [SubjectsAdminController::class, 'index'])
                 ->name('admin-subject-index');
