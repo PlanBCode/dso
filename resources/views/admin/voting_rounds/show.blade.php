@@ -58,7 +58,15 @@
                 </thead>
                 <tbody>
 
-                @foreach ($voting_round->subjects as $subject)
+                @php
+                    if ($voting_round->getProgressState() === 'in progress') {
+                        $subjects = $voting_round->subjects->all();
+                    } else {
+                        $subjects = $voting_round->getSubjectsSortedByVoteCount();
+                    }
+                @endphp
+
+                @foreach ($subjects as $subject)
 
                     <tr>
                         <td><a href="{{ route('admin-subject-show', ['subject' => $subject]) }}">@if($subject->image)<img src="{{ asset($subject->image) }}" class="rounded w-50a" alt="{{ $subject->title }}">@endif</a></td>

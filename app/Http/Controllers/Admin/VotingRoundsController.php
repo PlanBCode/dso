@@ -31,13 +31,7 @@ class VotingRoundsController extends Controller
 
     public function show(Request $request, VotingRound $voting_round): View
     {
-        $votes = [];
-        foreach ($voting_round->votes as $vote) {
-            if (empty($votes[$vote->subject_id])) {
-                $votes[$vote->subject_id] = 0;
-            }
-            $votes[$vote->subject_id]++;
-        }
+        $votes = $voting_round->getVotes();
 
         return view('admin.voting_rounds.show', compact('voting_round', 'votes'));
     }
