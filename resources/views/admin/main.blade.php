@@ -57,7 +57,7 @@
 
             <div class="">
                 <div class="mt-2 text-gray-600 {{ $darkPrefix }}text-gray-400 text-sm">
-                    Updates the application
+                    Warning: Updates the application, use with care!
                 </div>
             </div>
         </div>
