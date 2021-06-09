@@ -14,7 +14,7 @@ class VotingRoundsController extends Controller
 {
     public function index(Request $request): View
     {
-        $voting_rounds = VotingRound::all();
+        $voting_rounds = VotingRound::orderBy('created_at', 'desc')->get();
 
         return view('admin.voting_rounds.index', compact('voting_rounds'));
     }
