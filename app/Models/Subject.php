@@ -30,6 +30,7 @@ class Subject extends Model
         'title',
         'short_description',
         'description',
+        'importance',
         'state',
     ];
 

@@ -42,6 +42,15 @@
                                     </div>
                                 </label>
                             </div>
+                            <div class="pt-8 sm:justify-start">
+                                <label for="importance">
+                                    Waarom is het belangrijk dat dit onderzocht wordt? (max 100 woorden) *<br>
+                                    <textarea type="text" name="importance" id="importance" rows="8" class="form-control" data-to-summary="importance" required>{{ $subject->importance }}</textarea>
+                                    <div class="invalid-feedback">
+                                        Dit veld is verplicht.
+                                    </div>
+                                </label>
+                            </div>
                             @if(!$subject->image)
                             <div class="pt-8 sm:justify-start">
                                 Afbeelding

@@ -29,6 +29,7 @@ class SubjectSuggestionUpdatedListener
             'title' => $subjectSuggestion->title,
             'short_description' => $subjectSuggestion->description,
             'description' => $subjectSuggestion->description,
+            'importance' => $subjectSuggestion->importance,
         ];
         $subject = new Subject($data);
         $subject->save();

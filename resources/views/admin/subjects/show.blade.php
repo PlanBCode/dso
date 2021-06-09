@@ -18,6 +18,8 @@
 
 <p class="pt-8">{!! $subject->description !!}</p>
 
+<p class="pt-8">{!! $subject->importance !!}</p>
+
 @if($subject->suggestion)
     <p class="pt-8">
         <button class="btn btn-primary" data-toggle="modal" data-target="#fromSubjectSuggestionModal">Oorspronkelijk ingestuurde onderwerp</button>
