@@ -35,6 +35,13 @@
         </div>
     </div>
 
+    @if($voting_round->getProgressState() !== 'completed')
+        @include('modals.admin.voting_rounds.edit', ['voting_round' => $voting_round])
+        <div class="pt-8 sm:justify-start">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#editVotingRoundModal">Bewerken</button>
+        </div>
+    @endif
+
     <div class="pt-8 sm:justify-start">
         <a href="{{ route('admin-voting-round-index') }}" class="btn btn-secondary">Terug naar het overzicht</a>
     </div>

@@ -117,6 +117,8 @@ Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], fu
                 ->name('admin-voting-round-create');
             Route::post('/store', [VotingRoundsAdminController::class, 'store'])
                 ->name('admin-voting-round-store');
+            Route::put('/{voting_round}', [VotingRoundsAdminController::class, 'update'])
+                ->name('admin-voting-round-update');
             Route::get('/{voting_round}', [VotingRoundsAdminController::class, 'show'])
                 ->name('admin-voting-round-show');
             Route::get('/{voting_round}/delete', [VotingRoundsAdminController::class, 'destroy'])
