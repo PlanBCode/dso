@@ -21,7 +21,7 @@ class Vote extends Model
         'email',
         'why_important',
         'extra',
-        'disabled',
+        'disabled', // flag to indicate that the vote is overwritten
         'agree_to_terms',
     ];
 
