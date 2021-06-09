@@ -26,10 +26,10 @@
 </div>
 
 <div class="pt-8 sm:justify-start">
-    <a href="{{ route('main') }}" class="btn btn-primary">Eerst andere onderwerpen bekijken</a>
+    <a href="{{ route('home') }}" class="btn btn-primary">Eerst andere onderwerpen bekijken</a>
 </div>
 <div class="pt-8 sm:justify-start">
-    <button href="{{ route('main') }}" class="btn btn-primary" data-toggle="modal" data-target="#subjectSuggestionsModal">Ik wil een onderwerp insturen</button>
+    <button href="{{ route('home') }}" class="btn btn-primary" data-toggle="modal" data-target="#subjectSuggestionsModal">Ik wil een onderwerp insturen</button>
 </div>
 @endsection
 

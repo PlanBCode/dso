@@ -7,7 +7,7 @@
 </div>
 
 <div class="pt-8 sm:justify-start">
-    <a href="{{ route('main') }}" class="btn btn-primary">Andere onderwerpen bekijken</a>
+    <a href="{{ route('home') }}" class="btn btn-primary">Andere onderwerpen bekijken</a>
 </div>
 <div class="pt-8 sm:justify-start">
     <a href="{{ route('subject-suggestion-create') }}" class="btn btn-primary">Ik wil nog een onderwerp insturen</a>

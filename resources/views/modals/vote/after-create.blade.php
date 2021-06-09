@@ -15,7 +15,7 @@
                     </span>
 
                     <div class="pt-4 sm:justify-start">
-                        <a href="{{ route('main') }}" class="btn btn-primary">Terug naar het overzicht</a>
+                        <a href="{{ route('home') }}" class="btn btn-primary">Terug naar het overzicht</a>
                     </div>
                 </div>
                 <div class="modal-footer"></div>

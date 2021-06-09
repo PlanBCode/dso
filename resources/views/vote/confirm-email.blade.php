@@ -7,6 +7,6 @@
 </div>
 
 <div class="pt-8 sm:justify-start">
-    <a href="{{ route('main') }}" class="btn btn-primary">Onderwerpen bekijken</a>
+    <a href="{{ route('home') }}" class="btn btn-primary">Onderwerpen bekijken</a>
 </div>
 @endsection

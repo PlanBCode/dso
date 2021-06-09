@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="pt-8 sm:justify-start">
-    <a href="{{ route('main') }}" class="btn btn-secondary">Terug naar het overzicht</a>
+    <a href="{{ route('home') }}" class="btn btn-secondary">Terug naar het overzicht</a>
 </div>
 
 <div class="pt-8">
@@ -16,7 +16,7 @@
 
 {{--<p class="pt-8">--}}
 {{--    Dit onderwerp is samengesteld uit verschillende inzendingen.<br>--}}
-{{--    <button href="{{ route('main') }}" class="btn btn-primary" data-toggle="modal" data-target="#subjectsModal">Bekijk ze hier</button>--}}
+{{--    <button href="{{ route('home') }}" class="btn btn-primary" data-toggle="modal" data-target="#subjectsModal">Bekijk ze hier</button>--}}
 {{--</p>--}}
 
 <div class="pt-8 sm:justify-start justify-center">

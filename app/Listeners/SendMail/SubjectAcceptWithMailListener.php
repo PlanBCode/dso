@@ -34,7 +34,7 @@ class SubjectAcceptWithMailListener
     {
         $subjectSuggestion = $subject->suggestion;
 
-        $projectUrl = route('main');
+        $projectUrl = route('home');
         $recreateUrl = route('subject-suggestion-recreate', ['subjectSuggestion' => $subjectSuggestion, 'email' => $subjectSuggestion->email]);
         $replaceMtx = [
             '[link-to-projects]' => '<a href="' . $projectUrl . '">' . $projectUrl . '</a>',

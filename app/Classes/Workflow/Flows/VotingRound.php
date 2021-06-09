@@ -52,7 +52,7 @@ class VotingRound extends AbstractWorkflow implements WorkflowInterface
     {
         /** @var SubjectModel $subject */
         foreach ($subjects as $subject) {
-            $winningUrl = route('main', ['tab' => 3]);
+            $winningUrl = route('home', ['tab' => 3]);
             $viewData = compact('winningUrl');
 
             $mailSubject = 'Jouw onderwerp wordt onderzocht door de Stadsbron!';
@@ -72,8 +72,8 @@ class VotingRound extends AbstractWorkflow implements WorkflowInterface
     {
         /** @var SubjectModel $subject */
         foreach ($subjects as $subject) {
-            $winningUrl = route('main', ['tab' => 3]);
-            $archiveUrl = route('main', ['tab' => 4]);
+            $winningUrl = route('home', ['tab' => 3]);
+            $archiveUrl = route('home', ['tab' => 4]);
             $createSubjectUrl = route('subject-suggestion-create');
             $viewData = compact('winningUrl', 'archiveUrl', 'createSubjectUrl');
 
@@ -94,7 +94,7 @@ class VotingRound extends AbstractWorkflow implements WorkflowInterface
     {
         /** @var VoteModel $vote */
         foreach ($votingRound->votes as $vote) {
-            $winningUrl = route('main', ['tab' => 3]);
+            $winningUrl = route('home', ['tab' => 3]);
             $viewData = compact('winningUrl');
 
             $mailSubject = 'Onderwerp bekend bij de Stadsbron Onderzoekt';

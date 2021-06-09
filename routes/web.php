@@ -5,13 +5,14 @@ use App\Http\Controllers\Admin\HomeController as HomeAdminController;
 use App\Http\Controllers\Admin\SubjectsController as SubjectsAdminController;
 use App\Http\Controllers\Admin\VotingRoundsController as VotingRoundsAdminController;
 use App\Http\Controllers\AssistantsController;
-use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\FilesController;
 use App\Http\Controllers\SubjectsController;
 use App\Http\Controllers\SubjectSuggestionsController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\VoteController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,24 +26,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/projects', function (Request $request) {
+    return Redirect::route('home', ['tab' => $request->get('tab')]);
+});
+
 Route::group(['middleware' => ['view.inject.theme', 'view.inject.subjects']], function () {
     Auth::routes();
 
-    Route::get('/', [WelcomeController::class, 'index'])
-        ->name('home');
+    Route::group(['name' => 'main'], function () {
+        Route::get('/', [MainController::class, 'index'])
+            ->name('home');
+        Route::get('{context}/trigger', [MainController::class, 'trigger'])
+            ->name('trigger');
+    });
 
     Route::group(['prefix' => 'files'], function () {
         Route::post('/create', [FilesController::class, 'store'])
             ->name('files-store');
         Route::delete('/delete/{file}', [FilesController::class, 'destroy'])
             ->name('files-destroy');
-    });
-
-    Route::group(['name' => 'main'], function () {
-        Route::get('/projects', [MainController::class, 'index'])
-            ->name('main');
-        Route::get('{context}/trigger', [MainController::class, 'trigger'])
-            ->name('trigger');
     });
 
     Route::group(['prefix' => 'subjects'], function () {
