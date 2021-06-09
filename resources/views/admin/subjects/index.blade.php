@@ -6,7 +6,7 @@
         <table id="admin-subjects" class="table">
             <thead>
             <tr>
-                <th>Image</th>
+                <th>Afbeelding</th>
                 <th>Titel</th>
                 <th>Status</th>
                 <th>Geclaimed door</th>

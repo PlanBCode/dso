@@ -8,11 +8,11 @@
                 <div class="container px-0">
                     <div class="row">
                         <div class="col-12 pt-8 pl-0">
-                            <b>Begin:</b><br>
+                            <b>Start:</b><br>
                             <span>{{ $voting_round->begin->format('Y-m-d') }}</span><br>
                         </div>
                         <div class="col-12 pt-8 pl-0">
-                            <b>End:</b><br>
+                            <b>Eind:</b><br>
                             <span>{{ $voting_round->end->format('Y-m-d') }}</span><br>
                         </div>
                     </div>
@@ -22,12 +22,12 @@
                 <div class="container px-0">
                     <div class="row">
                         <div class="col-12 pt-8 pl-0">
-                            <b>Progress state:</b><br>
+                            <b>Progressie staat:</b><br>
                             <span>{{ $voting_round->getProgressState() }}</span><br>
                         </div>
                         <div class="col-12 pt-8 pl-0">
-                            <b>In progress:</b><br>
-                            <span>@if($voting_round->in_progress)Yes @else No @endif</span><br>
+                            <b>Lopend:</b><br>
+                            <span>@if($voting_round->in_progress)Ja @else Nee @endif</span><br>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
     @if($voting_round->getProgressState() === \App\Models\VotingRound::PROGRESS_STATE_NOT_STARTED)
 
         <div class="pt-8 sm:justify-start">
-            <a href="{{ route('admin-voting-round-destroy', ['voting_round' => $voting_round]) }}" class="btn btn-danger">Delete</a>
+            <a href="{{ route('admin-voting-round-destroy', ['voting_round' => $voting_round]) }}" class="btn btn-danger">Verwijderen</a>
         </div>
 
     @else
@@ -58,7 +58,7 @@
             <table id="admin-subjects" class="table">
                 <thead>
                 <tr>
-                    <th>Image</th>
+                    <th>Afbeelding</th>
                     <th>Titel</th>
                     <th>Stemmen</th>
                 </tr>

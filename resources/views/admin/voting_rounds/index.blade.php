@@ -3,18 +3,18 @@
 @section('content')
 
     <div class="pt-8">
-        <a href="{{ route('admin-voting-round-create') }}" class="btn btn-primary">Add new voting round</a>
+        <a href="{{ route('admin-voting-round-create') }}" class="btn btn-primary">Nieuwe stemronde</a>
     </div>
 
     <div class="pt-8">
         <table id="admin-voting-rounds" class="table mb-0">
             <thead>
             <tr>
-                <th>Begin</th>
-                <th>End</th>
-                <th>Progress state</th>
-                <th>In progress</th>
-                <th>Subjects</th>
+                <th>Start</th>
+                <th>Eind</th>
+                <th>Progressie staat</th>
+                <th>Lopend</th>
+                <th>Onderwerpen</th>
             </tr>
             </thead>
             <tbody>
@@ -25,7 +25,7 @@
                     <td><a href="{{ route('admin-voting-round-show', ['voting_round' => $voting_round]) }}">{{ $voting_round->begin->format('Y-m-d') }}</a></td>
                     <td><a href="{{ route('admin-voting-round-show', ['voting_round' => $voting_round]) }}">{{ $voting_round->end->format('Y-m-d') }}</a></td>
                     <td><a href="{{ route('admin-voting-round-show', ['voting_round' => $voting_round]) }}">{{ $voting_round->getProgressState() }}</a></td>
-                    <td><a href="{{ route('admin-voting-round-show', ['voting_round' => $voting_round]) }}">@if($voting_round->in_progress)Yes @else No @endif</a></td>
+                    <td><a href="{{ route('admin-voting-round-show', ['voting_round' => $voting_round]) }}">@if($voting_round->in_progress)Ja @else Nee @endif</a></td>
                     <td><a href="{{ route('admin-voting-round-show', ['voting_round' => $voting_round]) }}">{{ $voting_round->subjects->count() }}</a></td>
                 </tr>
 
@@ -36,7 +36,7 @@
     </div>
 
     <div class="pt-8">
-        <a href="{{ route('admin-voting-round-create') }}" class="btn btn-primary">Add new voting round</a>
+        <a href="{{ route('admin-voting-round-create') }}" class="btn btn-primary">Nieuwe stemronde</a>
     </div>
 
 @endsection
