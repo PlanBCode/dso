@@ -28,11 +28,26 @@ class UpdateApplication extends Command
     public function handle(): int
     {
         // execute command
-        exec(base_path().'/update', $output);
-
-        // print output from command
-        $this->comment( implode( PHP_EOL, $output ) );
+        self::readFromProcess(base_path().'/update');
 
         return 0;
+    }
+
+    private static function readFromProcess(string $command): void
+    {
+        if (function_exists('proc_open')) {
+            $descriptorSpec = [
+                1 => ['pipe', 'w'],
+                2 => ['pipe', 'w'],
+            ];
+
+            $process = proc_open($command, $descriptorSpec, $pipes, null, null, ['suppress_errors' => true]);
+            if (is_resource($process)) {
+                stream_get_contents($pipes[1]);
+                fclose($pipes[1]);
+                fclose($pipes[2]);
+                proc_close($process);
+            }
+        }
     }
 }
