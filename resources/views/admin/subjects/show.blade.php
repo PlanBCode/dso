@@ -54,6 +54,29 @@
     </p>
 @endif
 
+@if($assists)
+    <div class="pt-8">
+        <table id="admin-subjects" class="table">
+            <thead>
+            <tr>
+                <th>Helpen</th>
+                <th>Email</th>
+                <th>Contact?</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach ($assists as $vote)
+                <tr>
+                    <td>{{ $vote->extra['assist'] }}</td>
+                    <td>{{ $vote->email }}</td>
+                    <td>{{ $vote->extra['contact'] ? 'ja' : 'nee' }}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+@endif
+
     <div class="pt-8 sm:justify-start">
         <a href="{{ route('admin-subject-index') }}" class="btn btn-secondary">Terug naar het overzicht</a>
     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Events\Subject\AcceptWithMail;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Services\VoteAssistService;
 use File;
 use App\Models\File as FileModel;
 use App\Models\Subject;
@@ -23,7 +24,7 @@ class SubjectsController extends Controller
         return view('admin.subjects.index', compact($subjects));
     }
 
-    public function show(Request $request, Subject $subject): View
+    public function show(Request $request, Subject $subject, VoteAssistService $voteAssistService): View
     {
         $claimable = false;
         $claimed = false;
@@ -37,7 +38,9 @@ class SubjectsController extends Controller
             $editable = $claimed;
         }
 
-        return view('admin.subjects.show', compact('subject', 'editable', 'claimable', 'claimed'));
+        $assists = $voteAssistService->getForSubject($subject);
+
+        return view('admin.subjects.show', compact('subject', 'editable', 'claimable', 'claimed', 'assists'));
     }
 
     public function update(Request $request, Subject $subject): RedirectResponse
