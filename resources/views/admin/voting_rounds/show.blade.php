@@ -42,10 +42,6 @@
         </div>
     @endif
 
-    <div class="pt-8 sm:justify-start">
-        <a href="{{ route('admin-voting-round-index') }}" class="btn btn-secondary">Terug naar het overzicht</a>
-    </div>
-
     @if($voting_round->getProgressState() === \App\Models\VotingRound::PROGRESS_STATE_NOT_STARTED)
 
         <div class="pt-8 sm:justify-start">
@@ -53,6 +49,10 @@
         </div>
 
     @else
+
+        <div class="pt-8 sm:justify-start">
+            <a href="{{ route('admin-voting-round-index') }}" class="btn btn-secondary">Terug naar het overzicht</a>
+        </div>
 
         <div class="pt-8">
             <table id="admin-subjects" class="table">
