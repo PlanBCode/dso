@@ -15,7 +15,7 @@
                     <p>Wij zijn op zoek naar jouw vragen. De Stadsbron gaat namelijk de onderwerpen onderzoeken waar jij je over verwondert.</p>
 
                     <h3>Hoe werkt het?</h3>
-                    <p>Alle inwoners van Amersfoort en omstreken kunnen onderwerpen insturen die zij graag onderzocht willen hebben. Iedere maand kijken we welke vraag het meeste leeft in de regio. Dat doen we in een stemronde: gedurende twee weken kunnen bewoners stemmen op het onderwerp dat zij het liefst uitgezocht zien.</p>
+                    <p>Alle inwoners van Amersfoort en omstreken kunnen onderwerpen insturen die zij graag onderzocht willen hebben. Iedere maand kijken we welke vraag het meeste leeft in de regio. Dat doen we in een stemronde: gedurende vier weken kunnen bewoners stemmen op het onderwerp dat zij het liefst uitgezocht zien. Elke 10e van de maand weten we welk onderwerp de meeste stemmen heeft.</p>
                     <p>Het onderwerp dat het meeste leeft, koppelen we vervolgens aan één van onze journalisten. Hij of zij maakt er een artikel, video of podcast over voor de Stadsbron, het Amersfoortse platform voor lokale onderzoeksjournalistiek.</p>
                     <p>Waar mogelijk – en als je het leuk vindt – word je betrokken bij het onderzoek. En voordat het artikel, de video of podcast gepubliceerd wordt, komen we bij je terug om te kijken of we je vraag beantwoord hebben.</p>
                     <p>We zijn benieuwd welke vraag je voor ons in petto hebt!<br>Je kunt ook mee helpen onderzoeken: klik dan op ‘Onderzoek mee’.</p>
