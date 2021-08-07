@@ -50,8 +50,8 @@
         <li class="container list-group-item list-group-item-action hover-underline hover-pointer d-flex sm:no-max-width mx-sm-1 mx-md-auto mb-3 pb-0">
             <div class="row">
             <div class="col-12 col-lg-3 order-2 order-lg-1">
-                <div data-toggle="modal" data-target="#showVotingSubjectModal{{ $subject->id }}"><img src="{{ asset($subject->image) }}" class="rounded w-100a" alt="{{ $subject->title }}"></div>
-                <div class="mt-3" style="z-index: 10;">
+                <div data-toggle="modal" data-target="#showVotingSubjectModal{{ $subject->id }}">@if($subject->image)<img src="{{ asset($subject->image) }}" class="rounded w-100a mb-3" alt="{{ $subject->title }}">@endif</div>
+                <div style="z-index: 10;">
                     @if($votingRoundInProgress)
                     <label><input type="radio" name="vote" value="{{ $subject->id }}" data-vote-title="{{ $subject->title }}"> Dit onderwerp heeft mijn stem</label>
                     <label><input type="checkbox" name="help[]" value="{{ $subject->id }}" data-help-title="{{ $subject->title }}"> Ik wil meehelpen onderzoeken</label>
