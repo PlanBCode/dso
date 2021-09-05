@@ -20,6 +20,11 @@
 
     <!-- Favicon -->
     @include('snippet/favicon')
+
+    @if( env('APP_ENV') == 'production' )
+        <!-- Matomo -->
+        @include('snippet/matomo')
+    @endif
 </head>
 
 <body class="antialiased">
