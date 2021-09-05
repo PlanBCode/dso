@@ -1,4 +1,16 @@
-<ul class="list-group mt-3 mx-5 ">
+<div class="mt-3 mx-5 mb-5">
+    <p>
+        Heb je zelf ook een brandende vraag die je altijd al hebt willen stellen, een onderwerp uit de regio dat nooit in
+        de krant opgepikt wordt, of een gerucht dat je nog eens wilde uitzoeken?
+        <a href="{{ route('subject-suggestion-create') }}" class="text-gray-700 underline">Stuur hier je vraag in!</a>
+    </p>
+
+    <p>
+        Een onderwerp insturen kan altijd. Vanaf elke 10e van de maand kun je vier weken lang stemmen op de vragen en
+        onderwerpen die ingestuurd zijn.
+    </p>
+</div>
+<ul class="list-group mt-3 mx-5">
     @forelse($subjects as $index => $subject)
         <a href="#" class="list-group-item list-group-item-action d-flex align-items-center mb-3" data-toggle="modal" data-target="#showNewSubjectModal{{ $subject->id }}">
             @if($subject->image)

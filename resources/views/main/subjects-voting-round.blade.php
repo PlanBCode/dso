@@ -1,3 +1,18 @@
+<div class="mt-3 mx-5 mb-5">
+    <p>
+        Welk onderwerp wil jij graag uitgezocht zien door een onderzoeksjournalist? Breng je stem uit op één van de
+        onderstaande onderwerpen en bepaal mee welk onderwerp de Stadsbron gaat onderzoeken. Deze onderwerpen en vragen zijn
+        vorige maand ingestuurd door inwoners van Amersfoort. De stemronde is een maand lang open, tot de 10e van elke
+        maand.
+    </p>
+
+    <p>
+        Heb je zelf ook een vraag die je altijd al hebt willen stellen, een onderwerp uit de regio dat nooit in de krant
+        opgepikt wordt, of een gerucht dat je nog eens wilde uitzoeken?
+        <a href="{{ route('subject-suggestion-create') }}" class="text-gray-700 underline">Stuur hier je vraag in!</a>
+    </p>
+</div>
+
 @if(!$votingRound)
     <div class="mt-3 mx-5">
         <p>Hier zie je de vragen die afgelopen maand ingestuurd zijn.</p>

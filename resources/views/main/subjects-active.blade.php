@@ -1,3 +1,10 @@
+<div class="mt-3 mx-5 mb-5">
+    <p>Hier verschijnen de onderwerpen die per stemronde de meeste stemmen kregen. Onderzoeksjournalisten van de
+        Stadsbron gaan met deze onderwerpen aan de slag. Binnenkort kun je hier ook lezen hoe de onderzoeken vorderen.
+        Het eindresultaat van het onderzoek lees, zie of beluister je op de site van de
+        <a href="https://destadsbron.nl/" class="text-gray-700 underline" target="_blank">Stadsbron</a>.
+    </p>
+</div>
 <ul class="list-group mt-3 mx-5 ">
     @forelse($subjects as $index => $subject)
         <a href="#" class="list-group-item list-group-item-action d-flex align-items-center mb-3" data-toggle="modal" data-target="#showNewSubjectModal{{ $subject->id }}">
