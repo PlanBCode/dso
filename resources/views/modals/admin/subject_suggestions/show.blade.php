@@ -15,10 +15,10 @@
                         <span>{{ $subject_suggestion->title }}</span><br>
                         <br>
                         <b>Beschrijving onderwerp:</b><br>
-                        <span>{{ $subject_suggestion->description }}</span><br>
+                        <span>{!! nl2br($subject_suggestion->description) !!}</span><br>
                         <br>
                         <b>Dit moet onderzocht worden omdat:</b><br>
-                        <span>{{ $subject_suggestion->importance }}</span><br>
+                        <span>{!! nl2br($subject_suggestion->importance) !!}</span><br>
                         <br>
                         <b>Bronnen bij dit onderwerp:</b><br>
                         <div class="container">

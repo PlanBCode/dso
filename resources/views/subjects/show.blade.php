@@ -12,7 +12,7 @@
 
 <h5 class="pt-8 leading-7 font-semibold">{{ $subject->title }}</h5>
 
-<p class="pt-8">{!! $subject->description !!}</p>
+<p class="pt-8">{!! nl2br($subject->description) !!}</p>
 
 {{--<p class="pt-8">--}}
 {{--    Dit onderwerp is samengesteld uit verschillende inzendingen.<br>--}}

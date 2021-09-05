@@ -8,7 +8,7 @@
             @endif
             <div class="flex-column ml-4">
                 <h5 class="leading-7 font-semibold">{{ $subject->title }}</h5>
-                <p>{!! $subject->short_description !!}</p>
+                <p>{!! nl2br($subject->short_description) !!}</p>
             </div>
         </a>
 

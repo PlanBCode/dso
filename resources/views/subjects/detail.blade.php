@@ -10,10 +10,10 @@
                 <span>{{ $subject->title }}</span><br>
                 <br>
                 <b>Beschrijving onderwerp:</b><br>
-                <span>{!! $subject->description !!}</span><br>
+                <span>{!! nl2br($subject->description) !!}</span><br>
                 <br>
                 <b>Dit moet onderzocht worden omdat:</b><br>
-                <span>{!! $subject->importance !!}</span><br>
+                <span>{!! nl2br($subject->importance) !!}</span><br>
             </div>
         </div>
     </li>

@@ -63,7 +63,7 @@
 
             <div class="col-12 col-lg-9 order-1 order-lg-2" data-toggle="modal" data-target="#showVotingSubjectModal{{ $subject->id }}">
                 <h5 class="leading-7 font-semibold">{{ $subject->title }}</h5>
-                <p>{!! $subject->short_description !!}</p>
+                <p>{!! nl2br($subject->short_description) !!}</p>
             </div>
             </div>
         </li>
