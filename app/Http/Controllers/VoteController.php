@@ -51,7 +51,7 @@ class VoteController extends Controller
             $lines[] = ['type' => 'text', 'text' => 'Over twee weken weten we welk onderwerp de meeste stemmen heeft gekregen en welk onderwerp dus onderzocht gaat worden door de Stadsbron. We houden je op de hoogte wanneer het zover is! Je krijgt dan automatisch een mailtje.'];
         } elseif ($submittedHelp) {
             $lines[] = ['type' => 'header', 'text' => 'Leuk dat je wil meehelpen onderzoeken.'];
-            $lines[] = ['type' => 'warning', 'text' => 'Let op: je hebt een e-mail van ons ontvangen om je mailadres te bevestigen. Alleen dan ontvangen we je aanmelding.'];
+            $lines[] = ['type' => 'warning', 'text' => 'Let op: je stem is nog niet definitief. We sturen je nu een email met een link waarop je moet klikken om je stem definitief te maken. Dat is nodig om dubbel stemmen te voorkomen.'];
             $lines[] = ['type' => 'text', 'text' => 'Zodra we weten welk onderwerp onderzocht gaat worden, krijg je van ons bericht. En we nemen contact met je op wanneer we weten hoe jij bij dit onderzoek kunt helpen.'];
         }
 
