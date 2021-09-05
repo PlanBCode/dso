@@ -10,23 +10,7 @@
                     </button>
                 </div>
                 <div class="modal-body bg-white">
-                    <div class="border p-6 shadow-sm">
-                        <li class="d-flex">
-                            <div class="row">
-                                <div class="col-12 col-lg-3 mb-3 mb-lg-0">
-                                    <div data-toggle="modal" data-target="#{{ $modalPrefix }}{{ $subject->id }}"><img src="{{ asset($subject->image) }}" class="rounded w-100a" alt="{{ $subject->title }}"></div>
-                                </div>
-
-                                <div class="col-12 col-lg-9">
-                                    <b>Titel:</b><br>
-                                    <span>{{ $subject->title }}</span><br>
-                                    <br>
-                                    <b>Beschrijving onderwerp:</b><br>
-                                    <span>{!! $subject->description !!}</span><br>
-                                </div>
-                            </div>
-                        </li>
-                    </div>
+                    @include('subjects.detail', ['subject' => $subject])
                     <div class="mt-3">
                     @if($previous)
                         <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#{{ $modalPrefix }}{{ $previous->id }}">Naar het vorige onderwerp</button>

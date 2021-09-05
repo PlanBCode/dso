@@ -14,11 +14,7 @@
     </div>
 @endif
 
-<h5 class="pt-8 leading-7 font-semibold">{{ $subject->title }}</h5>
-
-<p class="pt-8">{!! $subject->description !!}</p>
-
-<p class="pt-8">{!! $subject->importance !!}</p>
+@include('subjects.detail', ['subject' => $subject])
 
 @if($subject->suggestion)
     <p class="pt-8">
