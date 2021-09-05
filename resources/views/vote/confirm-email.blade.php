@@ -7,6 +7,10 @@
 </div>
 
 <div class="pt-8 sm:justify-start">
+    <p><a href="https://planb.coop/betaal/stadsbrononderzoekt" target="_blank">Wil je de Stadsbron Onderzoekt ook financieel ondersteunen?! Daar zijn we heel blij mee!</a></p>
+</div>
+
+<div class="pt-8 sm:justify-start">
     <a href="{{ route('home') }}" class="btn btn-primary">Onderwerpen bekijken</a>
 </div>
 @endsection

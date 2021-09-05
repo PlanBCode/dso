@@ -27,8 +27,8 @@
     @endif
 </head>
 
-<body class="antialiased">
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-200 {{ $darkPrefix }}bg-gray-900 {{ $itemsCenter ?? '' ? 'sm:items-center' : '' }} sm:pt-6">
+<body class="antialiased d-flex flex-column min-h-screen">
+    <div class="relative container-fluid flex-fill items-top justify-center {{ $darkPrefix ? $darkPrefix.'bg-gray-900' : 'bg-gray-200'}}{{ $itemsCenter ?? '' ? 'sm:items-center' : '' }} sm:pt-6 pb-4">
 
         @if (Route::has('login'))
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -62,6 +62,10 @@
 
     @include('modals.assistant.create')
     @include('modals.assistant.after-create')
+
+    <footer class="border-top p-2">
+        <a rel="license" href="https://creativecommons.org/licenses/by/3.0/" class="pr-2"><img alt="Creative Commons-Licentie" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a>Dit werk valt onder een <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Naamsvermelding 3.0 Unported-licentie</a>.
+    </footer>
 
     <!-- Modals -->
     @yield('modals')
