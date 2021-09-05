@@ -4,7 +4,7 @@
         <div class="modal-dialog modal-xl modal-dialog-scrollable">
             <div class="modal-content bg-gray-200">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="voteModalSubmittedModalLabel">Sla mijn keuze op en verstuur</h5>
+                    <h5 class="modal-title" id="voteModalSubmittedModalLabel">Verstuur</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

@@ -42,7 +42,7 @@
             @if($votingRoundInProgress)
             <div class="col-6 align-self-center">
                 <div class="float-right">
-                    <button class="btn btn-primary disabled" data-dismiss="modal" data-toggle="modal" data-target="#voteModal" onclick="return false;" disabled>Sla mijn keuze op en verstuur</button>
+                    <button class="btn btn-primary disabled" data-dismiss="modal" data-toggle="modal" data-target="#voteModal" onclick="return false;" disabled>Verstuur</button>
                     <button class="btn btn-primary" style="display: none;" data-dismiss="modal" data-toggle="modal" data-target="#voteModalSubmittedModal" onclick="return false;">Keuze is verstuurd</button>
                 </div>
             </div>
@@ -94,7 +94,7 @@
     @endforelse
     @if($votingRoundInProgress)
     <div class="align-self-end mb-3">
-        <button class="btn btn-primary disabled" data-dismiss="modal" data-toggle="modal" data-target="#voteModal" onclick="return false;" disabled>Sla mijn keuze op en verstuur</button>
+        <button class="btn btn-primary disabled" data-dismiss="modal" data-toggle="modal" data-target="#voteModal" onclick="return false;" disabled>Verstuur</button>
         <button class="btn btn-primary" style="display: none;" data-dismiss="modal" data-toggle="modal" data-target="#voteModalSubmittedModal" onclick="return false;">Keuze is verstuurd</button>
     </div>
     @endif
