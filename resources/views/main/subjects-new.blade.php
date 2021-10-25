@@ -1,13 +1,16 @@
 <div class="mt-3 mx-5 mb-5">
     <p>
+        Hier vind je de onderwerpen die Amersfoorters deze maand ingestuurd hebben: vragen die ze graag beantwoord willen zien.   
+    </p>
+    <p>
         Heb je zelf ook een brandende vraag die je altijd al hebt willen stellen, een onderwerp uit de regio dat nooit in
         de krant opgepikt wordt, of een gerucht dat je nog eens wilde uitzoeken?
         <a href="{{ route('subject-suggestion-create') }}" class="text-gray-700 underline">Stuur hier je vraag in!</a>
     </p>
 
     <p>
-        Een onderwerp insturen kan altijd. Vanaf elke 10e van de maand kun je vier weken lang stemmen op de vragen en
-        onderwerpen die ingestuurd zijn.
+        Een onderwerp insturen kan altijd. Vanaf elke 10e van de maand kun je gedurende twee weken stemmen op de onderwerpen
+        die ingestuurd zijn. Het onderwerp dat in de stemronde de meeste stemmen krijgt, wordt uitgezocht door een journalist van <a href="https://destadsbron.nl/" class="text-gray-700 underline" target="_blank">Stadsbron</a>, platform voor achtergrond- en onderzoeksjournalistiek in en om Amersfoort.
     </p>
 </div>
 <ul class="list-group mt-3 mx-5">
