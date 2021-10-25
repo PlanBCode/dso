@@ -2,7 +2,7 @@ Beste lezer,
 
 Je ontvangt deze mail omdat je gestemd hebt bij de Stadsbron Onderzoekt, of omdat je hebt aangegeven dat je wil meehelpen onderzoeken.
 
-De afgelopen twee weken konden inwoners van Amersfoort en omstreken stemmen op het onderwerp dat zij het liefst onderzocht zien. We weten nu welk onderwerp de meeste stemmen heeft gekregen, en dus onderzocht gaat worden door een journalist van de Stadsbron.
+Inwoners van Amersfoort en omstreken konden stemmen op het onderwerp dat zij het liefst onderzocht zien. We weten nu welk onderwerp de meeste stemmen heeft gekregen, en dus onderzocht gaat worden door een journalist van de Stadsbron.
 
 Bekijk hier <a href="{!! $winningUrl !!}">{!! $winningUrl !!}</a> het onderwerp dat onderzocht gaat worden!
 
