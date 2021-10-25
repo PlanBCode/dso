@@ -10,7 +10,7 @@
 
     <p>
         Een onderwerp insturen kan altijd. Vanaf elke 10e van de maand kun je gedurende twee weken stemmen op de onderwerpen
-        die ingestuurd zijn. Het onderwerp dat in de stemronde de meeste stemmen krijgt, wordt uitgezocht door een journalist van <a href="https://destadsbron.nl/" class="text-gray-700 underline" target="_blank">Stadsbron</a>, platform voor achtergrond- en onderzoeksjournalistiek in en om Amersfoort.
+        die ingestuurd zijn. Het onderwerp dat in de stemronde de meeste stemmen krijgt, wordt uitgezocht door een journalist van de <a href="https://destadsbron.nl/" class="text-gray-700 underline" target="_blank">Stadsbron</a>, platform voor achtergrond- en onderzoeksjournalistiek in en om Amersfoort.
     </p>
 </div>
 <ul class="list-group mt-3 mx-5">
