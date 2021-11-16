@@ -2,8 +2,7 @@
     <p>
         Welk onderwerp wil jij graag uitgezocht zien door een onderzoeksjournalist? Breng je stem uit op één van de
         onderstaande onderwerpen en bepaal mee welk onderwerp de Stadsbron gaat onderzoeken. Deze onderwerpen en vragen zijn
-        vorige maand ingestuurd door inwoners van Amersfoort. De stemronde is een maand lang open, tot de 10e van elke
-        maand.
+        vorige maand ingestuurd door inwoners van Amersfoort. 
     </p>
 
     <p>
