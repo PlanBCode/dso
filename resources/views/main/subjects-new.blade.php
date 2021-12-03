@@ -1,6 +1,6 @@
 <div class="mt-3 mx-5 mb-5">
     <p>
-        Hier vind je de onderwerpen die Amersfoorters deze maand ingestuurd hebben: vragen over Amersfoort en omstreken die ze graag beantwoord willen zien.   
+        Hier vind je de onderwerpen die Amersfoorters deze maand ingestuurd hebben.   
     </p>
     <p>
         Binnenkort kun je stemmen op het onderwerp dat jij het belangrijkst vindt. Het onderwerp dat de meeste stemmen krijgt, wordt uitgezocht door een journalist.
