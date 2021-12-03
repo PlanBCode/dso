@@ -1,17 +1,16 @@
 <div class="mt-3 mx-5 mb-5">
     <p>
-        Hier vind je de onderwerpen die Amersfoorters deze maand ingestuurd hebben: vragen die ze graag beantwoord willen zien.   
+        Hier vind je de onderwerpen die Amersfoorters deze maand ingestuurd hebben: vragen over Amersfoort en omstreken die ze graag beantwoord willen zien.   
     </p>
     <p>
-        Heb je zelf ook een brandende vraag die je altijd al hebt willen stellen, een onderwerp uit de regio dat nooit in
-        de krant opgepikt wordt, of een gerucht dat je nog eens wilde uitzoeken?
-        <a href="{{ route('subject-suggestion-create') }}" class="text-gray-700 underline">Stuur hier je vraag in!</a>
+        Binnenkort kun je stemmen op het onderwerp dat jij het belangrijkst vindt. Het onderwerp dat de meeste stemmen krijgt, wordt uitgezocht door een journalist.
+    </p>
+    <p>
+        De Stadsbron Onderzoekt is onderdeel van <a href="https://destadsbron.nl/" class="text-gray-700 underline" target="_blank"> De Stadsbron</a>, het platform voor achtergrondjournalistiek in Amersfoort.  
+
     </p>
 
-    <p>
-        Een onderwerp insturen kan altijd. Vanaf elke 10e van de maand kun je gedurende twee weken stemmen op de onderwerpen
-        die ingestuurd zijn. Het onderwerp dat in de stemronde de meeste stemmen krijgt, wordt uitgezocht door een journalist van de <a href="https://destadsbron.nl/" class="text-gray-700 underline" target="_blank">Stadsbron</a>, platform voor achtergrond- en onderzoeksjournalistiek in en om Amersfoort.
-    </p>
+    
 </div>
 <ul class="list-group mt-3 mx-5">
     @forelse($subjects as $index => $subject)
